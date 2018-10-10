@@ -1,4 +1,4 @@
 # firstRepo
-1 [Dizi işlemleri](https://github.com/hasangulbaba/firstRepo/blob/master/Arraycalismalari.html)
+1 [Dizi işlemleri](https://hasangulbaba.github.io/firstRepo/Arraycalismalari.html)
 
-2 [CW3](https://github.com/hasangulbaba/firstRepo/blob/master/inspector.html)
+2 [CW3](https://hasangulbaba.github.io/firstRepo/inspector.html)
