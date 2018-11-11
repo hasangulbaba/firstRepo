@@ -9,3 +9,5 @@
 4- [CW5](https://hasangulbaba.github.io/firstRepo/CW_5.html)
 
 5- [HW1](https://hasangulbaba.github.io/firstRepo/HW1.html)
+
+6- [HW2](https://hasangulbaba.github.io/firstRepo/hw2.html)
