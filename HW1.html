@@ -1,131 +1,126 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///home/fsmblm0/Downloads/Array%20Demo.html -->
-<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+<html>
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>HW 1 - Hamza Çakmak </title>
-    <script>
-        "use strict";
-		// Metod stackoverflow'dan alınmıştır. https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-sting-in-javascript
-		String.prototype.replaceAll = function(search, replacement){
-			var target = this;
-			return target.split(search).join(replacement);
-			};
-			
-		
-		const dizi =[]
-		const avg = []
-		const max = []
-        function add() {
-             dizi.push([courseName.value, visa.value, final.value]);
-             console.log(dizi);
-            }
-   
-        function average() {
-			resultOne.textContent=""
-			resultTwo.textContent=""
-			resultThree.textContent=""
-			fieldOne.textContent="Name"
-			fieldTwo.textContent="Average"
-			fieldThree.textContent=""
-			
-			for(let i = 0; i < dizi.length;i++)
-			avg.push([dizi[i][0],(Number(dizi[i][1])+ Number(dizi[i][2])) / 2])	
-			for(let i = 0; i < dizi.length; i++){
-				resultOne.textContent+=avg[i][0]+" ";
-				resultTwo.textContent+=avg[i][1]+" ";
-			}
-			resultOne.innerHTML = resultOne.innerHTML.replaceAll(' ', '<br />');
-			resultTwo.innerHTML = resultTwo.innerHTML.replaceAll(' ', '<br />');
-			console.log(avg);	 
-         }
-		 
-         function maximum(){
-			resultOne.textContent=""
-			resultTwo.textContent=""
-			resultThree.textContent=""
-			fieldOne.textContent="Name"
-			fieldTwo.textContent="Maximum"
-			fieldThree.textContent=""
-			
-			let maxVal = (Number(dizi[0][1])+ Number(dizi[0][2])) / 2
-			let maxValName = dizi[0][0]
-            for (let i = 0; i< dizi.length; i++)
-			{
-				if(maxVal < (Number(dizi[i][1])+Number(dizi[i][2]))/2){
-					maxVal = (Number(dizi[i][1])+Number(dizi[i][2]))/2
-					maxValName = dizi[i][0]
-				}
-			}
-			resultOne.textContent=maxValName
-			resultTwo.textContent=maxVal
-			console.log(maxValName,maxVal)
-         }
-		 
-		 function print(){
-			resultOne.textContent=""
-			resultTwo.textContent=""
-			resultThree.textContent=""
-			fieldOne.textContent="Name"
-			fieldTwo.textContent="Visa"
-			fieldThree.textContent="Final"
-			
-			for(let i = 0; i < dizi.length; i++){
-				resultOne.textContent+=dizi[i][0]+" ";
-				resultTwo.textContent+=dizi[i][1]+" ";
-				resultThree.textContent+=dizi[i][2]+" ";
-			}
-			resultOne.innerHTML = resultOne.innerHTML.replaceAll(' ', '<br />');
-			resultTwo.innerHTML = resultTwo.innerHTML.replaceAll(' ', '<br />');
-			resultThree.innerHTML = resultThree.innerHTML.replaceAll(' ', '<br />');
-		 }
-    </script>
+    <title>Array Methods</title>
 </head>
 
+<script>
+"use strict";
+// replaceAll metodu stackoverflow'dan alınmıştır. https://stackoverflow.com/questions/1144783/how-to-replace-all-occurrences-of-a-string-in-javascript
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+var dizi = []
+var avg = {}
+var maxmark = []
+function add() {
+	dizi.push([course_name.value, midterm_mark.value, final_mark.value])
+	console.log(dizi)
+}
+function average() {
+	for (let i = 0; i < dizi.length; i++) {
+		avg[dizi[i][0]] = (Number(dizi[i][1]) + Number(dizi[i][2])) / 2
+	}
+	console.log(avg);
+	printAvg();
+}
+function maximum() {
+	let maxvalue = 0
+	let maxvaluename = 0
+	for (let i = 0; i < dizi.length; i++) {
+		if (maxvalue < (Number(dizi[i][1]) + Number(dizi[i][2])) / 2) {
+			maxvalue = (Number(dizi[i][1]) + Number(dizi[i][2])) / 2;
+			maxvaluename = dizi[i][0];
+		}
+	}
+	maxmark =  [maxvaluename, maxvalue]
+	console.log(maxmark)
+	printMax(maxmark)
+}
+function printDizi() {
+	print_name.innerHTML = ""
+	print_midterm.innerHTML = ""
+	print_final.innerHTML = ""
+	midtermhead.innerHTML = "Midterm"
+	finalhead.innerHTML = "Final"
+	for (let i = 0; i < dizi.length; i++) {
+		print_name.textContent += dizi[i][0] + " "
+		print_midterm.textContent += dizi[i][1] + " "
+		print_final.textContent += dizi[i][2] + " "
+		
+	}
+	print_name.innerHTML = print_name.innerHTML.replaceAll(' ', '<br>')
+	print_midterm.innerHTML = print_midterm.innerHTML.replaceAll(' ', '<br>')
+	print_final.innerHTML = print_final.innerHTML.replaceAll(" ", "<br>")
+	console.log(print_final.textContent)
+}
+function printAvg() {
+	print_name.innerHTML = ""
+	print_midterm.innerHTML = ""
+	midtermhead.innerHTML = "Average"
+	finalhead.innerHTML = ""
+	print_final.textContent = ""
+	for (let i = 0; i < dizi.length; i++) {
+		print_name.textContent += dizi[i][0] + " "
+		print_midterm.textContent += (Number(dizi[i][1]) + Number(dizi[i][2])) / 2 + " "
+		
+	}
+	print_name.innerHTML = print_name.innerHTML.replaceAll(' ', '<br>')
+	print_midterm.innerHTML = print_midterm.innerHTML.replaceAll(' ', '<br>')
+	console.log(print_final.textContent)
+}
+function printMax(maxmark) {
+	print_name.innerHTML = ""
+	print_midterm.innerHTML = ""
+	midtermhead.innerHTML = "Max"
+	finalhead.innerHTML = ""
+	print_final.textContent = ""
+	
+	print_name.textContent = maxmark[0]
+	print_midterm.textContent = maxmark[1]
+}
+</script>
+
 <body>
-    <h2> Add Course </h2>
-    <table>
-        <tbody><tr>
-            <td>Name</td>
-            <td><input id="courseName"></td>
-        </tr>
-        <tr>
-            <td>Midterm</td>
-            <td><input id="visa"></td>
-        </tr>
-        <tr>
-            <td>Final</td>
-            <td><input id="final"></td>
-        </tr>
-        <tr>
-            <td><input type="button" value="Add" onclick="add()"></td>
-        </tr>
-        <tr>
-            <td>
-                <input type="button" value="Print" onclick="print()">
-            </td>
-            <td>
-                <input type="button" value="Avg" onclick="average()">
-                <input type="button" value="Max" onclick="maximum()">
-            </td>
-        </tr>
-    </tbody></table>
-    <table>
-	<tbody><tr>
-          <td> <text id="fieldOne">Name</text>
-          </td>
-          <td><text id="fieldTwo">Midterm</text>
-          </td>
-          <td><text id="fieldThree">Final</text>
-          </td>
-        </tr>
-        <tr>
-         <td> <p id="resultOne"></p>
-          </td>
-          <td><p id="resultTwo"></p>
-          </td>
-          <td><p id="resultThree"></p>
-          </td>
-        </tr>
-    </tbody></table>
-</body></html>
+<h1>Add Course</h1>
+
+<table>
+  <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Name</text></th>
+   <th><input type=text id=course_name></th> 
+  </tr>
+  <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Midterm</text></th>
+   <th><input type=number id=midterm_mark></th> 
+  </tr>
+  <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Final</text></th>
+   <th><input type=number id=final_mark></th> 
+  </tr>
+  <tr style="text-align:left;">
+   <th><input type=button value="Add"  onClick="add()"></th> 
+  </tr>
+  <tr style="text-align:left;">
+   <th><input type=button value="Print"  onClick="printDizi()"></th>
+   <th><input type=button value="Avg"  onClick="average()"> 
+   <input type=button value="Max"   onClick="maximum()"></th>
+  </tr>
+</table>
+
+<table>
+  <tr>
+   <th><text>Name</text></th>
+   <th><text id="midtermhead">Midterm</text></th>
+   <th><text id="finalhead">Final</text></th>
+  </tr>
+  <tr>
+   <th><text id="print_name" style="font-weight: normal;"></text></th>
+   <th><text id="print_midterm" style="font-weight: normal;"></text></th>
+   <th><text id="print_final" style="font-weight: normal;"></text></th>
+  </tr>
+</table>
+</body>
+</html>
