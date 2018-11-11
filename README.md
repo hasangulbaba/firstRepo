@@ -10,4 +10,4 @@
 
 5- [HW1](https://hasangulbaba.github.io/firstRepo/HW1.html)
 
-6- [HW2](https://hasangulbaba.github.io/firstRepo/hw2.html)
+6- [HW2](https://hasangulbaba.github.io/firstRepo/database.html)
