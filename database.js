@@ -1,4 +1,4 @@
-class Course{
+class courses{
 
     constructor(name ,time ,date ,rooms){
             this.name=name;
@@ -14,7 +14,7 @@ class Course{
 
 }
 
-class Student {
+class students {
 
     constructer(id, name,gpa ,courses){
         this.id=id;
