@@ -13,3 +13,5 @@
 6- [HW2](https://hasangulbaba.github.io/firstRepo/database.html)
 
 7- [CW6](https://hasangulbaba.github.io/firstRepo/cw6.html)
+
+8- [CW7](https://hasangulbaba.github.io/firstRepo/CW7/index.html)
