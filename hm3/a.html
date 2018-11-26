@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<h2>My First JavaScript Animation</h2>
+
+<p>
+<button onclick="myMove()">Click Me</button>
+</p>
+
+<div id ="container">
+<div id ="animate"></div>
+</div>
+
+ 
+
+
+<div onmousedown="mDown(this)" onmouseup="mUp(this)"
+style="background-color:red;width:90px;height:20px;padding:40px;">
+Fatih Terim
+</div>
+
+<h1 onmouseover="style.color='orange'"
+onmouseout="style.color='blue'">
+HASAN GÜLBABA</h1>
+
+
+<h1>buraya yıldız koy!</h1>
+
+<button type="button" onclick="myFunction()">Set background color</button>
+
+
+
+<script>
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 2);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+}
+</script>
+
+
+
+<script>
+function mDown(obj) {
+    obj.style.backgroundColor = "yellow";
+    obj.innerHTML = "Şampiyon ";
+}
+
+function mUp(obj) {
+    obj.style.backgroundColor="red";
+    obj.innerHTML="GALATASARAY";
+}
+</script>
+<script>
+function myFunction() {
+    document.body.style.backgroundColor = "green";
+}
+</script>
+
+</body>
+
+
+</html>
