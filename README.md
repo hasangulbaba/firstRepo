@@ -1,5 +1,5 @@
-#ProgWork
 
+                    ---ClassWork---
 1- [Array Calismalari](https://hasangulbaba.github.io/firstRepo/Arraycalismalari.html)
 
 2- [CW3](https://hasangulbaba.github.io/firstRepo/inspector.html)
@@ -8,12 +8,14 @@
 
 4- [CW5](https://hasangulbaba.github.io/firstRepo/CW_5.html)
 
-5- [HW1](https://hasangulbaba.github.io/firstRepo/HW1.html)
+5- [CW6](https://hasangulbaba.github.io/firstRepo/cw6.html)
 
-6- [HW2](https://hasangulbaba.github.io/firstRepo/database.html)
+6- [CW7](https://hasangulbaba.github.io/firstRepo/CW7/index.html)
 
-7- [CW6](https://hasangulbaba.github.io/firstRepo/cw6.html)
+                   ---HomeWorks---
 
-8- [CW7](https://hasangulbaba.github.io/firstRepo/CW7/index.html)
+1- [HW1](https://hasangulbaba.github.io/firstRepo/HW1.html)
 
-9-[hw3](https://hasangulbaba.github.io/firstRepo/hm3/a.html)
+2- [HW3](https://hasangulbaba.github.io/firstRepo/hm3/a.html)
+
+3- [HW2](https://hasangulbaba.github.io/firstRepo/database.html)
