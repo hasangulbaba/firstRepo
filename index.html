@@ -13,7 +13,28 @@
 <link rel="canonical" href="https://hasangulbaba.github.io/firstRepo/" />
 <meta property="og:url" content="https://hasangulbaba.github.io/firstRepo/" />
 <meta property="og:site_name" content="firstRepo" />
+
+<div onmousedown="mDown(this)" onmouseup="mUp(this)"
+style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+Click Me</div>
+
+
 <script>
+function mDown(obj) {
+    obj.style.backgroundColor = "#1ec5e5";
+    
+
+    obj.innerHTML = "Release Me";
+}
+
+function mUp(obj) {
+    obj.style.backgroundColor="#D94A38";
+    
+    obj.innerHTML="Thank You";
+}
+
+
+
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker
           .register('sw.js')
@@ -29,8 +50,8 @@
     <style>
 
 a:link, a:visited {
-    background-color: blue;
-    color: orange;
+    background-color:orange;
+    color: red;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
@@ -54,7 +75,7 @@ a:link, a:visited {
       <h1><a href="https://hasangulbaba.github.io/firstRepo/">firstRepo</a></h1>
       
 
-      <p>ProgWork</p>
+				<p>---ClassWorks---</p>
 
 <p>1- <a href="https://hasangulbaba.github.io/firstRepo/Arraycalismalari.html">Array Calismalari</a></p>
 
@@ -64,15 +85,17 @@ a:link, a:visited {
 
 <p>4- <a href="https://hasangulbaba.github.io/firstRepo/CW_5.html">CW5</a></p>
 
-<p>5- <a href="https://hasangulbaba.github.io/firstRepo/HW1.html">HW1</a></p>
+<p>5- <a href="https://hasangulbaba.github.io/firstRepo/cw6.html">CW6</a></p>
 
-<p>6- <a href="https://hasangulbaba.github.io/firstRepo/database.html">HW2</a></p>
+<p>6- <a href="https://hasangulbaba.github.io/firstRepo/CW7/index.html">CW7</a></p>
 
-<p>7- <a href="https://hasangulbaba.github.io/firstRepo/cw6.html">CW6</a></p>
+				<p>---HomeWorks---</p>
 
-<p>8- <a href="https://hasangulbaba.github.io/firstRepo/CW7/index.html">CW7</a></p>
+<p>1- <a href="https://hasangulbaba.github.io/firstRepo/HW1.html">HW1</a></p>
 
-<p>9-<a href="https://hasangulbaba.github.io/firstRepo/hm3/a.html">hw3</a></p>
+<p>2- <a href="https://hasangulbaba.github.io/firstRepo/database.html">HW2</a></p>
+
+<p>3-<a href="https://hasangulbaba.github.io/firstRepo/hm3/a.html">hw3</a></p>
 
 
       
@@ -82,4 +105,5 @@ a:link, a:visited {
     
   </body>
 </html>
+
 
