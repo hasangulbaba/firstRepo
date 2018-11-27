@@ -4,8 +4,8 @@
   "description": "Advanced Programming Homeworks and Class Works",
   "start_url": "/firstRepo/home page/index.html",
   "display": "standalone",
-  "background_color": "yellow",
-  "theme_color": "yellow",
+  "background_color": "green",
+  "theme_color": "green",
   "icons": [
     {
       "src": "JS.png",
