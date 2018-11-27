@@ -1,19 +1,12 @@
 {
-  "name": "Hasan Gulbaba",
-  "short_name": "BLM305",
-  "description": "Advanced Programming Homeworks and Class Works",
-  "start_url": "/firstRepo/",
+  "name": "HASAN GULBABA",
+  "start_url": "/firstRepo/index.html",
   "display": "standalone",
-  "background_color": "yellow",
-  "theme_color": "yellow",
+  "background_color": "cyan",
   "icons": [
     {
       "src": "JS.png",
       "sizes": "192x192",
-      "type": "image/png"
-    }, {
-      "src": "JSBig.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ]
