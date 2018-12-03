@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>UstaDerslik</title>
+	<script type="text/javascript">
+		var fs = require("fs");
+var DOSYA_ADI = "gyDosya.txt";
+ 
+fs.exists(DOSYA_ADI, function(exists) {
+
+  if (exists) {
+    fs.stat(DOSYA_ADI, function(error, stats) {
+      fs.open(DOSYA_ADI, "r", function(error, fd) {
+        var buffer = new Buffer(stats.size);
+ 
+        fs.read(fd, buffer, 0, buffer.length, null, function(error, bytesRead, buffer) {
+          var VERI = buffer.toString("utf8", 0, buffer.length);
+ 
+          console.log(VERI);
+          fs.close(fd);
+        });
+      });
+    });
+  }
+});
+	</script>
+</head>
+<body>
+	
+	<input type="file" id="dosya" multiple onChange="veri()" />
+	<br /><br />
+	<div id="veri"></div>
+	
+</body>
+</html>
