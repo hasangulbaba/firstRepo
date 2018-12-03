@@ -8,7 +8,7 @@
 
 4- [CW5](https://hasangulbaba.github.io/firstRepo/CW_5.html)
 
-5- [CW6](https://hasangulbaba.github.io/firstRepo/upload.html)
+5- [CW6](https://hasangulbaba.github.io/firstRepo/cw6.html)
 
 6- [CW7](https://hasangulbaba.github.io/firstRepo/CW7/index.html)
 
