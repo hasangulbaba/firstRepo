@@ -10,7 +10,7 @@
 
 5- [CW6](https://hasangulbaba.github.io/firstRepo/cw6.html)
 
-6- [CW7](https://hasangulbaba.github.io/firstRepo/CW7/index.html)
+6- [CW7](https://hasangulbaba.github.io/firstRepo/CW7/upload.html)
 
                    ---HomeWorks---
 
