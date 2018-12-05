@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://maeyler.github.io/BLM305/work/Graphics.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <title>SVG and Canvas </title>
+
+  <style>
+    svg, canvas {
+        background: orange;
+        font: 10px arial, sans-serif;
+    }
+  </style>
+<style></style></head>
+
+<body>
+
+
+
+<h2>Using Canvas</h2>
+
+<canvas id="canvas" width="400" height="200"></canvas><br>
+
+<input id="inputdikdörtgen" type="color" value="#ff0000">
+
+<button onclick="dikdortgen()">dikdörtgen</button>
+<br>
+<input id="inputucgen" type="color" value="#ff0000">
+
+<button onclick="ucgen()">üçgen</button><br>
+<input id="inputdaire" type="color" value="#ff0000">
+<button onclick="daire()">daire</button><br>
+
+<input id="background" type="color" value="#ff0000">
+<button type="button" onclick="myFunction()">Set background color</button>
+<br>
+<h2>Dış Kabuk Renkleri</h2>
+<h2>Daire</h2>
+<input id="dairediskabukrengi" type="color" value="#ff0000">
+dış kabuk size:<input type="number" style="height:18px;width:45px" id="line" value="1" onchange="draw()">
+<h2>Dikdörtgen</h2>
+<input id="dikdörtinputdikdörtgen" type="color" value="#ff0000">
+
+
+<pre id="sample">function draw() {<br>    cx.beginPath(); cx.lineWidth = 4;<br>    cx.fillStyle = "yellow"; cx.strokeStyle = "blue";<br>    cx.arc(50, 50, 40, 0, 2*Math.PI);<br>    cx.fill(); cx.stroke();<br>    cx.fillStyle = "black"; <br>    cx.fillText("arc",44,55);<br><br>    cx.beginPath(); cx.lineWidth = 5;<br>    cx.fillStyle = "pink"; cx.strokeStyle = "red";<br>    cx.rect(110, 10, 100, 80);<br>    cx.fill(); cx.stroke();<br>    cx.fillStyle = "black"; <br>    cx.fillText("rect",148,55);<br>}</pre>
+
+<hr>
+
+<p>Ref: <i>Eloquent JavaScript</i>,
+<a href="http://eloquentjavascript.net/17_canvas.html" target="ExternalDocument"> Chap 17</a>
+</p>
+
+<script>
+"use strict";
+function draw() {
+   
+ cx.beginPath(); cx.lineWidth = document.getElementById("line").value;
+    cx.fillStyle = "yellow"; cx.strokeStyle = "blue";
+    cx.arc(50, 50, 40, 0, 2*Math.PI);
+    cx.fill(); cx.stroke();
+    cx.fillStyle = "black"; 
+    cx.fillText("arc",44,55);
+
+    cx.beginPath(); cx.lineWidth = 5;
+    cx.fillStyle = "pink"; cx.strokeStyle = "red";
+    cx.rect(110, 10, 100, 80);
+    cx.fill(); cx.stroke();
+    cx.fillStyle = "black"; 
+    cx.fillText("rect",148,55);
+ 
+
+}
+
+function daire(){
+ cx.beginPath(); cx.lineWidth = 4;
+    cx.fillStyle = document.getElementById("inputdaire").value; cx.strokeStyle = document.getElementById("dairediskabukrengi").value;
+    cx.arc(50, 50, 40, 0, 2*Math.PI);
+    cx.fill(); cx.stroke();
+    cx.fillStyle = "black"; 
+    cx.fillText("arc",44,55);
+}
+function dikdortgen(){
+   cx.beginPath(); cx.lineWidth = 5;
+    cx.fillStyle = document.getElementById("inputdikdörtgen").value; cx.strokeStyle = document.getElementById("dikdörtinputdikdörtgen").value;
+    cx.rect(110, 10, 100, 80);
+    cx.fill(); cx.stroke();
+    cx.fillStyle = "black"; 
+    cx.fillText("rect",148,55);
+
+}
+function ucgen(){
+ var canvas = document.getElementById('canvas');
+  if (canvas.getContext){
+    var ctx = canvas.getContext('2d');
+cx.fillStyle = document.getElementById("inputucgen").value
+    ctx.beginPath();
+    ctx.moveTo(250,50);
+    ctx.lineTo(350,75);
+    ctx.lineTo(350,25);
+    cx.fillText("triangle",300,85);
+    ctx.fill();
+  }
+
+  }
+function myFunction() {
+    document.body.style.backgroundColor = document.getElementById("background").value;
+}
+
+    sample.innerText = draw;
+    const cx = canvas.getContext("2d");
+    draw();
+</script>
+
+
+
+</body></html>
