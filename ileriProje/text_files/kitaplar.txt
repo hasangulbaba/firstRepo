@@ -1,2 +1,3 @@
-javaScript öğreniyorum	hasan gülbaba	yazılım
-dedektif kurukafa	hamza çakmak	bilim kurgu
+1 javaScript Ã¶ÄŸreniyorum	hasan gÃ¼lbaba	yazÄ±lÄ±m
+2 dedektif kurukafa	hamza Ã§akmak	bilim kurgu
+3 kitap adÄ± yazar tÃ¼r
