@@ -10,7 +10,7 @@
 
 <nav>
   <ul class="nav">
-    <li><a href="https://github.com/hasangulbaba/firstRepo/blob/master/ileriProje/deneme.html" style="float:initial;">ANASAYFA</a></li>
+    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/deneme.html" style="float:initial;">ANASAYFA</a></li>
     <li><a href="#">TÜRLER</a>
       <ul>
         <li><a href="#" onClick="showLinkElements('macera','')">MACERA</a>
@@ -28,11 +28,28 @@
       </ul>
     </li>
     <li><a href="#" id="button_search" onClick="searchingVisibility()">KİTAP ARA</a></li>
-    <li><a href="https://github.com/hasangulbaba/firstRepo/tree/master/ileriProje/kitaplar.html">KİTAPLAR</a></li>
-    <li><a href="https://github.com/hasangulbaba/firstRepo/tree/master/ileriProje/admin.html">ADMİN</a></li>
-    <li><a href="https://github.com/hasangulbaba/firstRepo/tree/master/ileriProje/iletisim.html">İLETİŞİM</a></li>
+    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/kitaplar.html">KİTAPLAR</a></li>
+    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/admin.html">ADMİN</a></li>
+    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/iletisim.html">İLETİŞİM</a></li>
   </ul>
 </nav><br>
+<style>
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 <script>
 function searchingVisibility() {
 	var searching = document.getElementById("input_search");
@@ -60,13 +77,13 @@ function searchingVisibilityHidden() {
 <script>
 const database = new Database();
 var elements = "";
-const url = "https://github.com/hasangulbaba/firstRepo/tree/master/ileriProje/text_files/";
+const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
 function readData(file) {
     console.log("readData "+file);
     if(file.includes("kitaplar.txt")) {
       fetch(url+file)
           .then(r => r.text())
-          .then(addKitap).then(showKonutElements);
+          .then(addKitap).then(makeRows);
     } 
     else if(file.includes("favoriler.txt")) {
       fetch(url+file)
@@ -82,42 +99,66 @@ function readData(file) {
 	console.log("File could not find.")
     }
 }
+
 function parse(line) {
     let b = line.split("\t");
     return b;
 }
 function addKitap(txt) {
     let a = txt.split("\n");
-    for (let s of a) {
-		let std = parse(s);
-		database.kitap.set(std[0],std[1],std[2]); //kitap adı,yazar,tür
-    }
-}
-
-readData("kitaplar.txt");
-readData("favoriler.txt");
-readData("üyeler.txt");
-readData("isyeri.txt");
-function showKonutElements() {
     
-	let row = "";
-    for (let b of database.konut.keys()) {
-	    row += '<div id="' + b + '' + database.kitap.get(b)[0] + '" class="card"><img src="' +database.kitap.get(b)[1]  + '" style="width:100%"> <h2 style="min-height:200px">' + ddatabase.kitap.get(b)[2] + '</h2><p class="price">' </div>';   
-    }
-    myTable.innerHTML += row;
-    elements += row;
+	for (let s of a) {
+		let std = parse(s);
+		database.kitap.set(std[0],[std[1],std[2],std[3]]); //kitap adı,yazar,tür
+		
+	}
 }
 
-function sorgula(aranacak_metin) {
-    let row = "";
-    for (let b of database.isyeri.keys()) {
-	    console.log("deneme");
-	    if (database.isyeri.get(b).includes(aranacak_metin))
-	    	row += '<div id="' + b + '' + database.isyeri.get(b)[0] + '" class="card"><img src="' + database.isyeri.get(b)[1]  + '" style="width:100%"> <h2 style="min-height:200px">' + database.isyeri.get(b)[3] + '</h2><p class="price">' + database.isyeri.get(b)[2] + ' TL</p><p>' + database.isyeri.get(b)[4] + '</p> <p><button>İncele</button></p></div>';   
+function diziyeEkle() {
+   for (let b of database.kitap.keys()) {
+			
+		for (let i = 0; i < database.kitap.size; i++) {
+      	console.log(database.kitap.get(b)[i]);
+       }
+	}
+}
+readData("kitaplar.txt");
+var phone = [
+
+{kitap:"hasan",yazar:"pilotluk tarihi",tür:"gs yayınevi"},
+
+];
+
+function makeRows() {
+    let row = "<th></th>";
+    for (let q of Object.keys(phone[0])){ 
+        row += "<th>"+q+"</th>";
+		}
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i < database.kitap.size; i++) {
+       row = "<th>"+i+"</th>";
+       for (let b of database.kitap.keys()) {
+			
+		
+      		row += "<td>"+database.kitap.get(b)[i]+"</td>";
+       
+	   }
+       text += "<tr>"+row+"</tr>";
+	   
     }
-    myTable.innerHTML = row;
-    elements = row;
-}   
+    const t = text.length+" chars";
+    
+    tablo.innerHTML = text; out.innerText = t; 
+}
+function kitapYaz(){
+
+
+
+
+}
+
+
+//burası seçilen türlerin gelme yeri
 function showLinkElements(mapName, aranacak_metin) {
     let row = "";
     if (mapName == "isyeri") {
@@ -173,16 +214,20 @@ function searcher(event) {
 	console.log(new_row);
 	myTable.innerHTML = new_row;
 }
-function sirala() {
-	let siralamalar = document.getElementById("options");
-	let secilen = siralamalar.options[siralamalar.selectedIndex].value;
-	if (secilen == "artan") {
-	
-	} else if (secilen == "azalan") {
-	} else {
-	}
-}
-</script>
 
+</script>
+<center>
+<table id="tablo"><tbody>
+<tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr><tr><th>1</th><td>1,1<span class="tip">C1</span></td><td>1,2<span class="tip">C2</span></td><td>1,3<span class="tip">C3</span></td><td>1,4<span class="tip">C4</span></td><td>1,5<span class="tip">C5</span></td></tr><tr><th>2</th><td>2,1<span class="tip">C6</span></td><td>2,2<span class="tip">C7</span></td><td>2,3<span class="tip">C8</span></td><td>2,4<span class="tip">C9</span></td><td>2,5<span class="tip">C10</span></td></tr><tr><th>3</th><td>3,1<span class="tip">C11</span></td><td>3,2<span class="tip">C12</span></td><td>3,3<span class="tip">C13</span></td><td>3,4<span class="tip">C14</span></td><td>3,5<span class="tip">C15</span></td></tr></tbody></table>
+
+<p id="out" style="font-size:small">999 chars</p>
+
+
+</center>
+
+<script>
+    title.innerText = document.title;
+    makeRows();
+</script>
 </body>
 </html>
