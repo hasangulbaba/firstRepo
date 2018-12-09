@@ -1,3 +1,4 @@
-1	javaScript öğreniyorum	hasan gülbaba	yazılım
-2	dedektif kurukafa	hamza çakmak	bilim kurgu
-3	kitap	ömer	oyun
+1	javaScript Ã¶ÄŸreniyorum	hasan gÃ¼lbaba	yazÄ±lÄ±m
+2	dedektif kurukafa	hamza Ã§akmak	bilim kurgu
+3	thomas clculus	Ã¶mer	bilim
+4 aklÄ±ndan bir sayÄ± tut john verdon polisiye
