@@ -1,4 +1,4 @@
 1	javaScript öğreniyorum	hasan gülbaba	yazılım
 2	dedektif kurukafa	hamza çakmak	bilim kurgu
 3	thomas clculus	ömer	bilim
-4 aklından bir sayı tut john verdon polisiye
+4    aklından bir sayı tut john verdon polisiye
