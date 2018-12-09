@@ -1,0 +1,6 @@
+1	aklından bir sayı tut	john verdon	polisiye
+2	dif eq	seyfettin fakıoğlu	bilim
+3	JSögreniyorum	akif eyler	yazılım
+4	dedektif kurukafa	hasan	macera
+5	mükemmel osmanlı	osman pınar	tarih falan
+6	marsa yolculuk	hakan gulbaba	bilim kurgu
