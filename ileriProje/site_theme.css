@@ -1,251 +1,164 @@
- <!DOCTYPE html>
-<html>
-<head>
- <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-<link rel="stylesheet" type="text/css" href="site_theme.css">
-<meta charset="UTF-8"/>
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .nav a, .nav li, .card{
+    float: none;
+    display: block;
+  }
+}
 
-<title>Website Project</title>
-<script src="database.js"></script>
+nav {    
+  display: block;
+  text-align: center;
+  min-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  float: center;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 
-<nav>
-  <ul class="nav">
-    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/deneme.html" style="float:initial;">ANASAYFA</a></li>
-    <li><a href="#" id="button_search" onClick="searchingVisibility()">KİTAP ARA</a></li>
-    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/admin.html">ADMİN</a></li>
-    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/iletisim.html">İLETİŞİM</a></li>
-  </ul>
-</nav><br>
-<center>
-<p>İSTEDİĞİNİZ KİTAP TÜRÜNÜ SEÇEBİLİRSİNİZ<p/>
-<button onclick="maceraBul()">macera</button>
-<button onclick="bilimBul()">bilim</button>
-<button onclick="bilimKurguBul()">bilim kurgu</button>
-<button onclick="tarihBul()">tarih</button>
-<button onclick="yazılımBul()">yazılım</button>
-<center>
-<style>
+}
+.nav a {
+  display: block; 
+  background: #f1ac2e; 
+  color: white; 
+  text-decoration: none;
+  padding: 0.8em 1.8em;
+  text-transform: uppercase;
+  position: relative;
+}
+.nav{  
+  vertical-align: top; 
+  display: inline-block;
+  border-radius: 6px;
+}
+.nav li {
+  position: relative;
+  min-width: 180px;
+}
+.nav > li { 
+  float: left; 
+  border-bottom: 4px white solid; 
+  margin-right: 1px; 
+  text-decoration: none;
+} 
+.nav > li > a { 
+  margin-bottom: 1px;
+}
 
-  table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
+.nav > li > a:hover { 
+ font-weight:bold;
+ background: #f3a313;
+
+}
+.nav > li:hover { 
+  border-bottom-color: orange;
+}
+
+.nav li li a { 
+  margin-top: 1px;
+}
+.nav li a:first-child:nth-last-child(2):before { 
+  content: ""; 
+  position: absolute; 
+  height: 0; 
+  width: 0; 
+  text-decoration: none;
+  border: 5px solid transparent; 
+  top: 50% ;
+  right: 5px;  
+ }
+/* submenu positioning*/
+.nav ul {
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+  left: -99999em;
+}
+.nav > li:hover > ul {
+  left: auto;
+  margin-top: 0px;
+  min-width: 100%;
+}
+.nav > li li:hover > ul { 
+  left: 100%;
+  margin-left: 1px;
+  top: -1px;
+}
+/* arrow hover styling */
+.nav > li > a:first-child:nth-last-child(2):before { 
+  border-top-color: white; 
+}
+.nav > li:hover > a:first-child:nth-last-child(2):before {
+  border: 5px solid transparent; 
+  border-bottom-color: white; 
+  margin-top:-5px
+}
+.nav li li > a:first-child:nth-last-child(2):before {  
+  border-left-color: white; 
+  margin-top: -5px
+}
+.nav li li:hover > a:first-child:nth-last-child(2):before {
+  border: 5px solid transparent; 
+  border-right-color: white;
+  right: 10px; 
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  max-height: 800px;
+  padding:50px;
+  display: inline-block;
+}
+.price {
+  color: grey;
+  font-size: 22px;
+}
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
   width: 100%;
+  font-size: 18px;
+}
+.card button:hover {
+  opacity: 0.7;
+}
+input[type=text] {
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 40%;
+}
+.footer {
+   position:fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+   margin: auto;
+   display: block;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-<script>
-function searchingVisibility() {
-	var searching = document.getElementById("input_search");
-	searching.style.visibility = "visible";
-}
-function searchingVisibilityHidden() {
-	var searching_input = document.getElementById("input_search");
-	searching_input.style.visibility = "hidden";
-}
-</script>
-</head>
-<body>
-<form>
-	<center style="visibility:hidden;" id="input_search">
-	  	<input  type="text" placeholder="Search.." onkeypress="searcher(this.value)"><br>
-		<fieldset style="width:45%;">
-		</fieldset>
-	</center>
-</form><br>
-<center>
-<div id="myTable" style="display:inline;">
-</div>
-</center>
-
-<script>
-const database = new Database();
-var elements = "";
-const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
-function readData(file) {
-    console.log("readData "+file);
-    if(file.includes("kitaplar.txt")) {
-      fetch(url+file)
-          .then(r => r.text())
-          .then(addKitap).then(makeRows);
-    } 
-    else if(file.includes("favoriler.txt")) {
-      fetch(url+file)
-          .then(r => r.text())
-          .then(addIsyeri).then(showIsyeriElements);
-    }
-    else if(file.includes("uyeler.txt")) {
-      fetch(url+file)
-          .then(r => r.text())
-          .then(addBina).then(showBinaElements);
-    } 
-    else {
-	console.log("File could not find.")
-    }
-}
-
-function parse(line) {
-    let b = line.split("\t");
-    return b;
-}
-function addKitap(txt) {
-    let a = txt.split("\n");
-    
-	for (let s of a) {
-		let std = parse(s);
-		database.kitap.set(std[0],[std[1],std[2],std[3]]); //kitap adı,yazar,tür
-		
-	}
-}
-readData("kitaplar.txt");
-var phone = [
-
-{kitap:"",yazar:"",tür:""},
-
-];
-
-function makeRows() {
-    let row = "<th></th>";
-    for (let q of Object.keys(phone[0])){ 
-        row += "<th>"+q+"</th>";
-		}
-    let text = "<tr>"+row+"</tr>";
-	let i=1;
-    for (let b of database.kitap.keys()) {
-	   row = "<th>"+i+"</th>";
-	   
-       for (let i = 0; i < database.kitap.size; i++) {
-			
-		
-      		row += "<td>"+database.kitap.get(b)[i]+"</td>";
-       
-	   }
-       text += "<tr>"+row+"</tr>";
-	   i++;
-    }
-    const t = text.length+" chars";
-    
-    tablo.innerHTML = text; out.innerText = t; 
-}
-
-//burası seçilen türlerin gelme yeri
-
-function maceraBul(){
-
-	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]==" macera"){
-			console.log("ad");
-			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
-			}
-		}
-  }
-  
-}
-function bilimBul(){
-	
-	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]=="bilim"){
-			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
-			}
-		}
-  }
-  
-}
-function bilimKurguBul(){
-	
-	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]=="bilim kurgu"){
-		
-			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
-			}
-		}
-		
-  }
-  
-}
-function tarihBul(){
-
-	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]=="tarih falan"){
-		
-			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
-			}
-		}
-	
-  }
-  
-}
-function yazılımBul(){
-
-	for (let b of database.kitap.keys()) {
-		if(database.kitap.get(b)[2]=="yazılım"){
-		
-			for (let i = 0; i <3; i++) {
-			console.log(database.kitap.get(b)[i]);
-			}
-		}
-  }
-  
-}
-
-function checkButtonControl() {	
-	regexGK = new RegExp(/[0-9]+GK"/g);
-	regexK = new RegExp(/[0-9]+K"/g);
-	regexS = new RegExp(/[0-9]+S"/g);
-	let row = elements;
-	row = row.split("</div>");
-	let new_row = "";
-	for (let i of row) {
-		if (c.checked && i.match(regexGK))
-			new_row += i + "</div>";
-		if (b.checked && i.match(regexK))
-			new_row += i + "</div>";
-		if (a.checked && i.match(regexS))
-			new_row += i + "</div>";			
-	}
-	myTable.innerHTML = new_row;
-}
-function searcher(event) {
-	let row = elements;
-	row = row.split("</div>");
-	let new_row = "";
-	for (let i of row) {
-		if (i.toLowerCase().match(event.toLowerCase())) {
-				new_row += i + "</div>";
-		}
-	}
-	console.log(new_row);
-	myTable.innerHTML = new_row;
-}
-
-</script>
-<center>
-<table id="tablo"><tbody>
-<tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr><tr><th>1</th><td>1,1<span class="tip">C1</span></td><td>1,2<span class="tip">C2</span></td><td>1,3<span class="tip">C3</span></td><td>1,4<span class="tip">C4</span></td><td>1,5<span class="tip">C5</span></td></tr><tr><th>2</th><td>2,1<span class="tip">C6</span></td><td>2,2<span class="tip">C7</span></td><td>2,3<span class="tip">C8</span></td><td>2,4<span class="tip">C9</span></td><td>2,5<span class="tip">C10</span></td></tr><tr><th>3</th><td>3,1<span class="tip">C11</span></td><td>3,2<span class="tip">C12</span></td><td>3,3<span class="tip">C13</span></td><td>3,4<span class="tip">C14</span></td><td>3,5<span class="tip">C15</span></td></tr></tbody></table>
-
-<p id="out" style="font-size:small">999 chars</p>
-
-
-</center>
-
-<script>
-    makeRows();
-</script>
-</body>
-</html>
