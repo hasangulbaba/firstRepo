@@ -163,79 +163,75 @@ function makeRows() {
 //burası seçilen türlerin gelme yeri
 
 function maceraBul(){
-
+ 	
 	for (let b of database.kitap.keys()) {
-		console.log(database.kitap.get(b)[2])
-		var strin = database.kitap.get(b)[2].normalize('NFC');
-		if(strin =="macera"){
+		
+        let x=database.kitap.get(b)[2].trim();
+	    if(x=="macera"){
 			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
-			break;
+			    console.log(database.kitap.get(b)[i]);
 			}
 		}
-  }
-  
+    }
 }
 function bilimBul(){
 	
 	for (let b of database.kitap.keys()) {
 		
-		if(database.kitap.get(b)[2]=="bilim"){
+        let x=database.kitap.get(b)[2].trim();
+	    if(x=="bilim"){
 			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
+			    console.log(database.kitap.get(b)[i]);
 			}
 		}
-  }
+    }
   
 }
 function bilimKurguBul(){
-	
+		
 	for (let b of database.kitap.keys()) {
 		
-		if(database.kitap.get(b)[2]=="bilim kurgu"){
-		
+        let x=database.kitap.get(b)[2].trim();
+	    if(x=="bilim kurgu"){
 			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
+			    console.log(database.kitap.get(b)[i]);
 			}
 		}
-		
-  }
-  
+    }
 }
 function tarihBul(){
-
+	
 	for (let b of database.kitap.keys()) {
 		
-		if(database.kitap.get(b)[2]=="tarih falan"){
-		
+        let x=database.kitap.get(b)[2].trim();
+	    if(x=="tarih falan"){
 			for (let i = 0; i < 3; i++) {
-			console.log(database.kitap.get(b)[i]);
+			    console.log(database.kitap.get(b)[i]);
 			}
 		}
-	
-  }
-  
+    }
 }
 function yazılımBul(){
-
+	
 	for (let b of database.kitap.keys()) {
-		if(database.kitap.get(b)[2]=="yazılım"){
 		
-			for (let i = 0; i <3; i++) {
-			console.log(database.kitap.get(b)[i]);
+        let x=database.kitap.get(b)[2].trim();
+	    if(x=="yazilim"){
+			for (let i = 0; i < 3; i++) {
+			    console.log(database.kitap.get(b)[i]);
 			}
 		}
-  }
-  
+    }
 }
 
 function search() {
 	
 	for (let i of database.kitap.keys()) {
-		if ((database.kitap.get(i)[1]) == yazarTur.value) {
+       		if (database.kitap.get(i)[1] == yazarTur.value) {
 			console.log("var");	
 			break;
-		}
+    		}
+            else{console.log("yok")}        
 		
 	}
 }
