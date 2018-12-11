@@ -6,6 +6,7 @@
 <meta charset="UTF-8"/>
 
 <title>Website Project</title>
+
 <script src="database.js"></script>
 
 <nav>
@@ -17,48 +18,76 @@
   </ul>
 </nav><br>
 <center>
-<p>İSTEDİĞİNİZ KİTAP TÜRÜNÜ SEÇEBİLİRSİNİZ<p/>
-<button onclick="maceraBul()">macera</button>
-<button onclick="bilimBul()">bilim</button>
-<button onclick="bilimKurguBul()">bilim kurgu</button>
-<button onclick="tarihBul()">tarih</button>
-<button onclick="yazılımBul()">yazılım</button>
+<h1 style="border: 3px solid Violet;">İSTEDİĞİNİZ TÜRÜ SEÇEBİLİRSİNİZ</h1>
+<div id="myDIV">  <button onclick="maceraBul()">macera</button>
+  <button onclick="bilimBul()">bilim</button>
+  <button onclick="bilimKurguBul()">bilim kurgu</button>
+  <button onclick="tarihBul()">tarih</button>
+  <button onclick="yazılımBul()">yazılım</button>
+</div>
+
 <center>
 <style>
+#myDIV {
+    width: 310px;
+    height: 25px;
+    border: 15px solid coral;
+    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    50% {border-color: lightblue;}
+}
+
+@keyframes mymove {
+    50% {border-color: lightblue;}
+}
+
+
 
   table {
-  font-family: arial, sans-serif;
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
   border-collapse: collapse;
-  width: 100%;
 }
-
-td, th {
-  border: 1px solid #dddddd;
+th, td {
+  padding: 15px;
   text-align: left;
-  padding: 8px;
 }
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
 }
 </style>
-<script>
-function searchingVisibility() {
-	var searching = document.getElementById("input_search");
-	searching.style.visibility = "visible";
-}
-function searchingVisibilityHidden() {
-	var searching_input = document.getElementById("input_search");
-	searching_input.style.visibility = "hidden";
-}
-</script>
+
 </head>
-<body>
+<body style="background-color:#8e7648;">
+<br>
+<center>
+<img src="C:\Users\HAKAN\Desktop\resimler\hasan.jpg" width="400" height="250">
+<center>
+<br/>
+<table>
+<button onclick="search()">Arama</button>
+  <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Yazar giriniz:</text></th>
+   <th><input type=text id=yazarTur></th> 
+  </tr>
+<table/>
 <form>
+
 	<center style="visibility:hidden;" id="input_search">
 	  	<input  type="text" placeholder="Search.." onkeypress="searcher(this.value)"><br>
-		<fieldset style="width:45%;">
-		</fieldset>
 	</center>
 </form><br>
 <center>
@@ -106,27 +135,21 @@ function addKitap(txt) {
 	}
 }
 readData("kitaplar.txt");
-var phone = [
-
+var basliklar = [
 {kitap:"",yazar:"",tür:""},
-
 ];
 
 function makeRows() {
     let row = "<th></th>";
-    for (let q of Object.keys(phone[0])){ 
-        row += "<th>"+q+"</th>";
-		}
+    for (let q of Object.keys(basliklar[0]))
+        row += "<th>"+q+"</th>";	
     let text = "<tr>"+row+"</tr>";
 	let i=1;
     for (let b of database.kitap.keys()) {
 	   row = "<th>"+i+"</th>";
 	   
-       for (let i = 0; i < database.kitap.size; i++) {
-			
-		
+       for (let i = 0; i < 3; i++) {
       		row += "<td>"+database.kitap.get(b)[i]+"</td>";
-       
 	   }
        text += "<tr>"+row+"</tr>";
 	   i++;
@@ -134,6 +157,7 @@ function makeRows() {
     const t = text.length+" chars";
     
     tablo.innerHTML = text; out.innerText = t; 
+	
 }
 
 //burası seçilen türlerin gelme yeri
@@ -141,11 +165,12 @@ function makeRows() {
 function maceraBul(){
 
 	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]==" macera"){
-			console.log("ad");
+		console.log(database.kitap.get(b)[2])
+		var strin = database.kitap.get(b)[2].normalize('NFC');
+		if(strin =="macera"){
 			for (let i = 0; i < 3; i++) {
 			console.log(database.kitap.get(b)[i]);
+			break;
 			}
 		}
   }
@@ -204,34 +229,15 @@ function yazılımBul(){
   
 }
 
-function checkButtonControl() {	
-	regexGK = new RegExp(/[0-9]+GK"/g);
-	regexK = new RegExp(/[0-9]+K"/g);
-	regexS = new RegExp(/[0-9]+S"/g);
-	let row = elements;
-	row = row.split("</div>");
-	let new_row = "";
-	for (let i of row) {
-		if (c.checked && i.match(regexGK))
-			new_row += i + "</div>";
-		if (b.checked && i.match(regexK))
-			new_row += i + "</div>";
-		if (a.checked && i.match(regexS))
-			new_row += i + "</div>";			
-	}
-	myTable.innerHTML = new_row;
-}
-function searcher(event) {
-	let row = elements;
-	row = row.split("</div>");
-	let new_row = "";
-	for (let i of row) {
-		if (i.toLowerCase().match(event.toLowerCase())) {
-				new_row += i + "</div>";
+function search() {
+	
+	for (let i of database.kitap.keys()) {
+		if ((database.kitap.get(i)[1]) == yazarTur.value) {
+			console.log("var");	
+			break;
 		}
+		
 	}
-	console.log(new_row);
-	myTable.innerHTML = new_row;
 }
 
 </script>
@@ -247,6 +253,13 @@ function searcher(event) {
 <script>
     makeRows();
 </script>
+<form>
+
+  <input type="radio" name="gender" value="male" checked> Favorilere Ekle<br>
+  <input type="radio" name="gender" value="male" checked> Favorilere Ekle<br>
+
+</form>
+ 
 </body>
 </html>
 
