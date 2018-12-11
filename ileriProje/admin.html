@@ -1,1 +1,114 @@
-qwdqd
+<!DOCTYPE html>
+<body style="background-color:#8e7648;">
+<html>
+<script src="database.js"></script>
+<center>
+<h1>ADMİN GİRİŞ SAYFASI<h1/>
+<center>
+<tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Şifrenizi Girin:</text></th>
+   <th><input type=text id=sifre></th> 
+  </tr>
+<h5 style="border: 3px solid orange;">YAPMAK İSTEDİĞİNİZ İŞLEMİ SEÇİNİZ</h5>
+<button onclick="kitapEkle()">Envantere Kitap Ekle</button>
+<button onclick="kitapcıkar()">Envanterden Kitap çıkar</button>
+
+<table>
+  <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">id:</text></th>
+   <th><input type=number id=kitapAd></th> 
+  </tr>
+  <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Kitap Adı:</text></th>
+   <th><input type=text id=id></th> 
+  </tr>
+   <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Yazar:</text></th>
+   <th><input type=text id=yazar></th> 
+  </tr>
+   <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Tür:</text></th>
+   <th><input type=text id=tur></th> 
+  </tr>
+</table>
+
+<script>
+const database = new Database();
+
+const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
+
+function readData(file) {
+    console.log("readData "+file);
+    if(file.includes("sifre.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(getSifre).then(kitapEkle);
+    }
+    else {
+	console.log("File could not find.")
+    }
+}
+
+function parse(line) {
+    let b = line.split("\t");
+    return b;
+}
+function addKitap(txt) {
+    let a = txt.split("\n");
+    
+	for (let s of a) {
+		let std = parse(s);
+		database.kitap.set(std[0],[std[1],std[2],std[3]]); //kitap adı,yazar,tür
+		
+	}
+}
+readData("kitaplar.txt");
+readData("sifre.txt");
+let dizi=[];
+function getSifre(txt) {
+    let a = txt.split("\n");
+	dizi.push(a);
+	return dizi;
+}
+
+function kitapEkle(){
+	if(sifre.value == dizi[0]){
+		for(b of database.kitap.keys()){
+			if(b == kitapAd.value){
+				break;
+			}
+			//buraya yazma ve sonra break koy!
+		}
+		
+	}
+else{
+	window.alert("Girdiğiniz Şifre hatalı!");
+	}
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
