@@ -48,11 +48,11 @@
 
 
   table {
+  
   width:100%;
 }
 table, th, td {
   border: 1px solid black;
-  border-collapse: collapse;
 }
 th, td {
   padding: 15px;
@@ -68,15 +68,18 @@ table#t01 th {
   background-color: black;
   color: white;
 }
+
 </style>
 
 </head>
 <body style="background-color:#8e7648;">
+
 <br>
 <center>
 <img src="C:\Users\HAKAN\Desktop\resimler\hasan.jpg" width="400" height="250">
 <center>
 <br/>
+
 <table>
 <button onclick="search()">Arama</button>
   <tr style="text-align:left;">
@@ -84,12 +87,14 @@ table#t01 th {
    <th><input type=text id=yazarTur></th> 
   </tr>
 <table/>
+
 <form>
 
 	<center style="visibility:hidden;" id="input_search">
 	  	<input  type="text" placeholder="Search.." onkeypress="searcher(this.value)"><br>
 	</center>
 </form><br>
+
 <center>
 <div id="myTable" style="display:inline;">
 </div>
@@ -163,75 +168,79 @@ function makeRows() {
 //burası seçilen türlerin gelme yeri
 
 function maceraBul(){
- 	
+
 	for (let b of database.kitap.keys()) {
-		
-        let x=database.kitap.get(b)[2].trim();
-	    if(x=="macera"){
+		console.log(database.kitap.get(b)[2])
+		var strin = database.kitap.get(b)[2].normalize('NFC');
+		if(strin =="macera"){
 			for (let i = 0; i < 3; i++) {
-			    console.log(database.kitap.get(b)[i]);
+			console.log(database.kitap.get(b)[i]);
+			break;
 			}
 		}
-    }
+  }
+  
 }
 function bilimBul(){
 	
 	for (let b of database.kitap.keys()) {
 		
-        let x=database.kitap.get(b)[2].trim();
-	    if(x=="bilim"){
+		if(database.kitap.get(b)[2]=="bilim"){
 			for (let i = 0; i < 3; i++) {
-			    console.log(database.kitap.get(b)[i]);
+			console.log(database.kitap.get(b)[i]);
 			}
 		}
-    }
+  }
   
 }
 function bilimKurguBul(){
-		
+	
 	for (let b of database.kitap.keys()) {
 		
-        let x=database.kitap.get(b)[2].trim();
-	    if(x=="bilim kurgu"){
+		if(database.kitap.get(b)[2]=="bilim kurgu"){
+		
 			for (let i = 0; i < 3; i++) {
-			    console.log(database.kitap.get(b)[i]);
+			console.log(database.kitap.get(b)[i]);
 			}
 		}
-    }
+		
+  }
+  
 }
 function tarihBul(){
-	
+
 	for (let b of database.kitap.keys()) {
 		
-        let x=database.kitap.get(b)[2].trim();
-	    if(x=="tarih falan"){
+		if(database.kitap.get(b)[2]=="tarih falan"){
+		
 			for (let i = 0; i < 3; i++) {
-			    console.log(database.kitap.get(b)[i]);
+			console.log(database.kitap.get(b)[i]);
 			}
 		}
-    }
+	
+  }
+  
 }
 function yazılımBul(){
-	
+
 	for (let b of database.kitap.keys()) {
+		if(database.kitap.get(b)[2]=="yazılım"){
 		
-        let x=database.kitap.get(b)[2].trim();
-	    if(x=="yazilim"){
-			for (let i = 0; i < 3; i++) {
-			    console.log(database.kitap.get(b)[i]);
+			for (let i = 0; i <3; i++) {
+			console.log(database.kitap.get(b)[i]);
 			}
 		}
-    }
+  }
+  
 }
 
 function search() {
 	
 	for (let i of database.kitap.keys()) {
-       		if (database.kitap.get(i)[1] == yazarTur.value) {
+		if ((database.kitap.get(i)[1]) == yazarTur.value) {
 			console.log("var");	
 			break;
-    		}
-            else{console.log("yok")}        
+		}
 		
 	}
 }
@@ -258,4 +267,3 @@ function search() {
  
 </body>
 </html>
-
