@@ -75,12 +75,14 @@ function getSifre(txt) {
 }
 
 function kitapEkle(){
+	//bir sorgu daha eklenip var olan id ile aynı id ye sahip olan kitap eklenemez!!
+	
 	if(sifre.value == dizi[0]){
 		for(b of database.kitap.keys()){
 			if(b == kitapAd.value){
 				break;
 			}
-			//buraya yazma ve sonra break koy!
+			//buraya dosya ya yazma gelecek ve sonra break koy!
 		}
 		
 	}
@@ -90,26 +92,6 @@ else{
 }
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
