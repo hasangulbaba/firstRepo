@@ -88,12 +88,6 @@ table#t01 th {
   </tr>
 <table/>
 
-<form>
-
-	<center style="visibility:hidden;" id="input_search">
-	  	<input  type="text" placeholder="Search.." onkeypress="searcher(this.value)"><br>
-	</center>
-</form><br>
 
 <center>
 <div id="myTable" style="display:inline;">
@@ -102,7 +96,6 @@ table#t01 th {
 
 <script>
 const database = new Database();
-var elements = "";
 const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
 function readData(file) {
     console.log("readData "+file);
@@ -110,16 +103,6 @@ function readData(file) {
       fetch(url+file)
           .then(r => r.text())
           .then(addKitap).then(makeRows);
-    } 
-    else if(file.includes("favoriler.txt")) {
-      fetch(url+file)
-          .then(r => r.text())
-          .then(addIsyeri).then(showIsyeriElements);
-    }
-    else if(file.includes("uyeler.txt")) {
-      fetch(url+file)
-          .then(r => r.text())
-          .then(addBina).then(showBinaElements);
     } 
     else {
 	console.log("File could not find.")
@@ -168,24 +151,22 @@ function makeRows() {
 //burası seçilen türlerin gelme yeri
 
 function maceraBul(){
-
+	var strin="";
 	for (let b of database.kitap.keys()) {
-		console.log(database.kitap.get(b)[2])
-		var strin = database.kitap.get(b)[2].normalize('NFC');
+		 strin= database.kitap.get(b)[2].trim();
 		if(strin =="macera"){
 			for (let i = 0; i < 3; i++) {
 			console.log(database.kitap.get(b)[i]);
-			break;
 			}
 		}
   }
   
 }
 function bilimBul(){
-	
+var strin="";
 	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]=="bilim"){
+		 strin= database.kitap.get(b)[2].trim();
+		if(strin =="bilim"){
 			for (let i = 0; i < 3; i++) {
 			console.log(database.kitap.get(b)[i]);
 			}
@@ -195,51 +176,52 @@ function bilimBul(){
 }
 function bilimKurguBul(){
 	
+	var strin="";
 	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]=="bilim kurgu"){
-		
+		 strin= database.kitap.get(b)[2].trim();
+		if(strin =="bilim kurgu"){
 			for (let i = 0; i < 3; i++) {
 			console.log(database.kitap.get(b)[i]);
 			}
 		}
-		
   }
   
 }
 function tarihBul(){
 
+	var strin="";
 	for (let b of database.kitap.keys()) {
-		
-		if(database.kitap.get(b)[2]=="tarih falan"){
-		
+		 strin= database.kitap.get(b)[2].trim();
+		if(strin =="tarih"){
 			for (let i = 0; i < 3; i++) {
 			console.log(database.kitap.get(b)[i]);
 			}
 		}
-	
   }
   
 }
 function yazılımBul(){
 
+	var strin="";
 	for (let b of database.kitap.keys()) {
-		if(database.kitap.get(b)[2]=="yazılım"){
-		
-			for (let i = 0; i <3; i++) {
+		 strin= database.kitap.get(b)[2].trim();
+		if(strin =="yazilim"){
+			for (let i = 0; i < 3; i++) {
 			console.log(database.kitap.get(b)[i]);
 			}
 		}
   }
   
 }
-
+//yazar'ın kitaplarını getirir.
 function search() {
-	
 	for (let i of database.kitap.keys()) {
 		if ((database.kitap.get(i)[1]) == yazarTur.value) {
 			console.log("var");	
 			break;
+		}
+		else{console.log("yok");
+		break;
 		}
 		
 	}
