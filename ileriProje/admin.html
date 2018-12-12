@@ -7,8 +7,11 @@
 <center>
 <tr style="text-align:left;">
    <th><text style="font-weight:bold;text-align:left;">Şifrenizi Girin:</text></th>
-   <th><input type=text id=sifre></th> 
+   <form action="/action_page.php">
+  Password: <input type="password" name="pwd" id="sifre" maxlength="8"><br>
+</form>
   </tr>
+  
 <h5 style="border: 3px solid orange;">YAPMAK İSTEDİĞİNİZ İŞLEMİ SEÇİNİZ</h5>
 <button onclick="kitapEkle()">Envantere Kitap Ekle</button>
 <button onclick="kitapcıkar()">Envanterden Kitap çıkar</button>
