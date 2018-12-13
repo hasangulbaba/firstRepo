@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<title>Anasayfa</title>
 <head>
  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="stylesheet" type="text/css" href="site_theme.css">
@@ -8,25 +9,57 @@
 <title>Website Project</title>
 
 <script src="database.js"></script>
-
-<nav>
-  <ul class="nav">
-    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/deneme.html" style="float:initial;">ANASAYFA</a></li>
-    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/admin.html">ADMİN</a></li>
-    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/iletisim.html">İLETİŞİM</a></li>
-  </ul>
-</nav><br>
 <center>
-<h1 style="border: 3px solid Violet;">İSTEDİĞİNİZ TÜRÜ SEÇİNİZ</h1>
-<div id="myDIV">  <button onclick="maceraBul()">macera</button>
-  <button onclick="bilimBul()">bilim</button>
-  <button onclick="bilimKurguBul()">bilim kurgu</button>
-  <button onclick="tarihBul()">tarih</button>
-  <button onclick="yazılımBul()">yazılım</button>
-</div>
 
-<center>
+
 <style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.header {
+  background-color: #8B0000;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+
 #myDIV {
     width: 310px;
     height: 25px;
@@ -71,22 +104,52 @@ table#t01 th {
 </style>
 
 </head>
-<body style="background-color:#8e7648;">
+#8e7648;
+<body style="background-color:#808080;">
+<div class="header">
+  <h1>~~ADVANCE LİBRARY~~</h1>
+</div>
+
+<nav>
+  <ul class="nav">
+    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/deneme.html" style="float:initial;">ANASAYFA</a></li>
+    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/admin.html">ADMİN</a></li>
+    <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/hizliErisim.html">HIZLI ERİŞİM</a></li>
+  </ul>
+</nav><br>
+
+<center>
+<h1 style="border: 3px solid Violet;">İSTEDİĞİNİZ TÜRÜ SEÇEBİLİRSİNİZ</h1>
+<div id="myDIV">  <button onclick="maceraBul()">macera</button>
+  <button onclick="bilimBul()">bilim</button>
+  <button onclick="bilimKurguBul()">bilim kurgu</button>
+  <button onclick="tarihBul()">tarih</button>
+  <button onclick="yazılımBul()">yazılım</button>
+</div>
+<center>
+
+
+<form>
+  <input type="button" value="Facebook ile giriş yap" onclick="openWin()">
+</form>
+
 
 <br>
 <center>
 <img src="C:\Users\HAKAN\Desktop\resimler\hasan.jpg" width="400" height="250">
 <center>
-<br/>
-
+</br>
+<br>
 <table>
-<button onclick="search()">Arama</button>
+<br>
+<button onclick="search()">Yazar Sorgu</button>
+<br/>
   <tr style="text-align:left;">
    <th><text style="font-weight:bold;text-align:left;">Yazar giriniz:</text></th>
    <th><input type=text id=yazarTur></th> 
   </tr>
 <table/>
-
+</br>
 
 <center>
 <div id="myTable" style="display:inline;">
@@ -94,6 +157,10 @@ table#t01 th {
 </center>
 
 <script>
+function openWin() {
+  window.open("https://www.facebook.com");
+}
+
 const database = new Database();
 const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
 function readData(file) {
@@ -102,6 +169,16 @@ function readData(file) {
       fetch(url+file)
           .then(r => r.text())
           .then(addKitap).then(makeRows);
+    } 
+    else if(file.includes("favoriler.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(addIsyeri).then(showIsyeriElements);
+    }
+    else if(file.includes("uyeler.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(addBina).then(showBinaElements);
     } 
     else {
 	console.log("File could not find.")
@@ -212,16 +289,15 @@ function yazılımBul(){
   }
   
 }
-//yazar'ın kitaplarını getirir.
+
 function search() {
+	
 	for (let i of database.kitap.keys()) {
 		if ((database.kitap.get(i)[1]) == yazarTur.value) {
 			console.log("var");	
 			break;
 		}
-		else{console.log("yok");
-		break;
-		}
+		
 		
 	}
 }
