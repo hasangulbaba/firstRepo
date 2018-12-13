@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<body style="background-color:#8e7648;">
+<body style="background-color:#808080;">
 <html>
+<title>admin</title>
 <script src="database.js"></script>
 <center>
 <h1>ADMİN GİRİŞ SAYFASI<h1/>
 <center>
 <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left;">Şifrenizi Girin:</text></th>
    <form action="/action_page.php">
-  Password: <input type="password" name="pwd" id="sifre" maxlength="8"><br>
+  <br>
+  <tr style="text-align:left;">
+   <th><text style="font-weight:bold;text-align:left;">Kullanıcı Adı:</text></th>
+   <th><input type=text id=kullanıcıAd></th> 
+  </tr>
+  </br>
+  Şifrenizi Girin: <input type="password" name="pwd" id="sifre" maxlength="8"><br>
+</form>
+<form action="/action_page.php">
+  E-mails: <input type="email" name="emailaddress" multiple>
+  <input type="submit">
 </form>
   </tr>
   
@@ -17,13 +27,16 @@
 <button onclick="kitapcıkar()">Envanterden Kitap çıkar</button>
 
 <table>
+
   <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left;">id:</text></th>
-   <th><input type=number id=kitapAd></th> 
+   <th><form action="/action_page.php">
+  id:<input type="number" id="id" name="quantity" min="1" >
+  <th><input type="submit"></th>
+</form></th>
   </tr>
   <tr style="text-align:left;">
    <th><text style="font-weight:bold;text-align:left;">Kitap Adı:</text></th>
-   <th><input type=text id=id></th> 
+   <th><input type=text id=kitapAd></th> 
   </tr>
    <tr style="text-align:left;">
    <th><text style="font-weight:bold;text-align:left;">Yazar:</text></th>
@@ -75,14 +88,12 @@ function getSifre(txt) {
 }
 
 function kitapEkle(){
-	//bir sorgu daha eklenip var olan id ile aynı id ye sahip olan kitap eklenemez!!
-	
 	if(sifre.value == dizi[0]){
 		for(b of database.kitap.keys()){
-			if(b == kitapAd.value){
+			if(b == id.value){
 				break;
 			}
-			//buraya dosya ya yazma gelecek ve sonra break koy!
+			//buraya yazma ve sonra break koy!
 		}
 		
 	}
@@ -92,6 +103,8 @@ else{
 }
 
 </script>
+
+
 
 
 
