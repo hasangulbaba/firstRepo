@@ -42,13 +42,13 @@ Fatih Terim
 function myMove() {
   var elem = document.getElementById("animate");   
   var pos = 0;
-  var id = setInterval(frame, 2);
+  var id = setInterval(frame, 2);  //2 sn bir çalıştır frameyi
   function frame() {
-    if (pos == 350) {
+    if (pos == 350) {  //kutumuz 50 50 350 old zaman dur 
       clearInterval(id);
     } else {
       pos++; 
-      elem.style.top = pos + 'px'; 
+      elem.style.top = pos + 'px'; //her seferinde px kadar ekle ileri git üstten ve alttan gider.
       elem.style.left = pos + 'px'; 
     }
   }
