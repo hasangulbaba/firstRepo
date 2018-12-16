@@ -1,6 +1,0 @@
-1	aklindan bir sayi tut	john verdon	polisiye
-2	dif eq	seyfettin fakioglu	bilim
-3	JSogreniyorum	akif eyler	yazilim
-4	dedektif kurukafa	hasan	macera
-5	mukemmel osmanli	osman pinar	tarih falan
-6	marsa yolculuk	hakan gulbaba	bilim kurgu
