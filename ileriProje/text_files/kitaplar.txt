@@ -1,0 +1,9 @@
+1	aklýndan bir sayý tut	john verdon	polisiye
+2	dif eq	seyfettin fakýoðlu	bilim
+3	JSögreniyorum	akif eyler	yazýlým
+4	dedektif kurukafa	hasan	macera
+5	mükemmel osmanlý	osman pýnar	tarih
+6	marsa yolculuk	hakan gulbaba	bilim kurgu
+7	macera dolu usa	hamza hasan	macera
+8	8 adýmda java	drogba	yazýlým
+9	calculus	thomas	bilim
