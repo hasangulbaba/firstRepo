@@ -1,56 +1,58 @@
 <!DOCTYPE html>
-<body style="background-color:#808080;">
 <html>
+<style>
+body  {
+    background-image: url("https://spycep.com/wp-content/uploads/android-telefon-dinleme-spycep-arka-plan-3.jpg");
+}
+</style>
+<body style="background-color:#808080;">
 <title>admin</title>
 <script src="database.js"></script>
+
 <center>
 <h1>ADMİN GİRİŞ SAYFASI<h1/>
 <center>
+
 <tr style="text-align:left;">
-   <form action="/action_page.php">
+   <form>
   <br>
   <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left;">Kullanıcı Adı:</text></th>
+   <th><text style="font-weight:bold;text-align:left; color:white;">Kullanıcı Adı:</text></th>
    <th><input type=text id=kullanıcıAd></th> 
   </tr>
   </br>
-  Şifrenizi Girin: <input type="password" name="pwd" id="sifre" maxlength="8"><br>
+  Şifrenizi Girin: <input type="password" name="pwd" id="sifre" maxlength="8" color:white;><br>
+  E-mails: <input type="email" name="emailaddress" multiple color:white;>
 </form>
-<form action="/action_page.php">
-  E-mails: <input type="email" name="emailaddress" multiple>
-  <input type="submit">
-</form>
-  </tr>
+ </tr>
   
-<h5 style="border: 3px solid orange;">YAPMAK İSTEDİĞİNİZ İŞLEMİ SEÇİNİZ</h5>
+<h5 style="border: 3px solid orange; color:white;">YAPMAK İSTEDİĞİNİZ İŞLEMİ SEÇİNİZ</h5>
 <button onclick="kitapEkle()">Envantere Kitap Ekle</button>
 <button onclick="kitapcıkar()">Envanterden Kitap çıkar</button>
 
 <table>
 
   <tr style="text-align:left;">
-   <th><form action="/action_page.php">
+   <th><form>
   id:<input type="number" id="id" name="quantity" min="1" >
-  <th><input type="submit"></th>
 </form></th>
   </tr>
   <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left;">Kitap Adı:</text></th>
+   <th><text style="font-weight:bold;text-align:left; color:white;">Kitap Adı:</text></th>
    <th><input type=text id=kitapAd></th> 
   </tr>
    <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left;">Yazar:</text></th>
+   <th><text style="font-weight:bold;text-align:left; color:white;">Yazar:</text></th>
    <th><input type=text id=yazar></th> 
   </tr>
    <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left;">Tür:</text></th>
+   <th><text style="font-weight:bold;text-align:left; color:white;">Tür:</text></th>
    <th><input type=text id=tur></th> 
   </tr>
 </table>
 
 <script>
 const database = new Database();
-
 const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
 
 function readData(file) {
@@ -58,7 +60,7 @@ function readData(file) {
     if(file.includes("sifre.txt")) {
       fetch(url+file)
           .then(r => r.text())
-          .then(getSifre).then(kitapEkle);
+          .then(getSifre).then(kitapEkle).then(addKitap);
     }
     else {
 	console.log("File could not find.")
@@ -90,10 +92,11 @@ function getSifre(txt) {
 function kitapEkle(){
 	if(sifre.value == dizi[0]){
 		for(b of database.kitap.keys()){
-			if(b == id.value){
+			if(b == id.value){//aynı id eklenemez
+				window.alert("Aynı id'ye Sahip Kitap Bulunmaktadır,İd'yi Değiştiriniz!");
 				break;
 			}
-			//buraya yazma ve sonra break koy!
+			else{window.alert("Kitabınız Başarılı Bir Şekilde Eklenmiştir !");}
 		}
 		
 	}
