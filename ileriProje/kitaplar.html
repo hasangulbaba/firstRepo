@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <title>project web</title>
-<meta charset="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="database.js"></script>
 <style>
@@ -65,9 +66,21 @@ html {
   color: 	#5F9EA0;
   padding: 15px;
 }
-</style>
 
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+
+
+</style>
+</head>
 <body>
+
 <br>
 <div class="header">
   <h1>Kitaplar</h1>
@@ -78,11 +91,8 @@ html {
 <div id="myTable" style="display:inline;max-width:1000px">
 </div>
 </center>
-<br>
 
-  
-</div>
-</br>
+
 <script>
 var elements = "";
 const database = new Database();
@@ -115,11 +125,12 @@ readData("kitapResim.txt");
 function showBooks() {
     let row = "";
     for (let b of database.kitapResim.keys()) {
-	    row += '<div class="column"><div class="card"><img src=https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/kitapResim.txt/"' + database.kitapResim.get(b)[0].trim()+   '" style="width:100%"> <div class="container"><h2>Dedektif Kurukafa</h2><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
+	    row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/kitapResim.txt\"'+database.kitapResim.get(b)[0]+'" style="width:100%"><div class="container"><h2>Dedektif Kurukafa</h2><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
     }
     myTable.innerHTML += row;
     elements += row;
 }
 </script>
+
 </body>
 </html>
