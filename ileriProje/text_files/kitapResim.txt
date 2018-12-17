@@ -1,0 +1,26 @@
+1	s1.jpg	macera
+2	s10.jpg	macera
+3	s11.jpg	macera
+4	s12.jpg	bilim
+5	s13.jpg	tarih
+6	s14.jpg	bilim
+7	s15.jpg	yazýlým
+8	s16.jpg	yazýlým
+9	s17.jpg	bilim kurgu
+10	s18.jpg	bilim kurgu
+11	s19.jpg	polisiye
+12	s2.jpg	polisiye
+13	s20.jpg	polisiye
+14	s21.jpg	bilim
+15	s22.jpg	tarih
+16	s23.jpg	macera
+17	s24.jpg	bilim kurgu
+18	s25.jpg	bilim kurgu
+19	s27.jpg	macera
+20	s28.jpg	tarih
+21	s4.jpg	bilim
+22	s5.jpg	bilim kurgu
+23	s6.jpg	polisiye
+24	s7.jpg	yazýlým
+25	s8.jpg	polisiye
+26	s9.jpg	bilim kurgu
