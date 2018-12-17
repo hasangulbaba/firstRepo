@@ -3,186 +3,123 @@
 <title>project web</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="database.js"></script>
 <style>
-
-* {
+html {
   box-sizing: border-box;
 }
 
-.row::after {
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 50%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
   content: "";
   clear: both;
   display: table;
 }
 
-[class*="col-"] {
-  float: left;
-  padding: 15px;
+.title {
+  color: grey;
 }
 
-html {
-  font-family: "Lucida Sans", sans-serif;
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
 }
 
+.button:hover {
+  background-color: #555;
+}
 .header {
   background-color: #000000;
   color: 	#5F9EA0;
   padding: 15px;
 }
-
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 180px;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
-}
-
-div.gallery img {
-  width: 100%;
-  height: auto;
-}
-
-div.desc {
-  padding: 15px;
-  text-align: center;
-}
-img:hover {
-  opacity: 0.5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
-}
-img {
-  border-radius: 8px;
-}
-
-
 </style>
 
 <body>
 <br>
 <div class="header">
-  <h1>KİTAPLAR</h1>
+  <h1>Kitaplar</h1>
 </div>
 </br>
 
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
+<center>
+<div id="myTable" style="display:inline;max-width:1000px">
 </div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s2.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s2.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s3.jpeg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s3.jpeg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s14.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s14.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s15.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s15.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s16.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s16.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s18.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s18.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s17.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s17.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s19.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s19.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s21.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s21.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s22.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s22.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
-<div class="gallery">
-  <a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg">
-    <img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/s1.jpg" alt="5Terre" width="600" height="400">
-  </a>
-  <div class="desc">Dedektif Kurukafa</div>
-</div>
+</center>
+<br>
 
+  
 </div>
+</br>
+<script>
+var elements = "";
+const database = new Database();
+const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
+function readData(file) {
+    console.log("readData "+file);
+    if(file.includes("kitapResim.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(addKitap).then(showBooks);
+    } 
+    else {
+	console.log("File could not find.")
+    }
+}
+
+function parse(line) {
+    let b = line.split("\t");
+    return b;
+}
+
+function addKitap(txt) {
+    let a = txt.split("\n");
+    for (let s of a) {
+		let std = parse(s);
+		database.kitapResim.set(std[0], [std[1], std[2]]);
+    }
+}
+readData("kitapResim.txt");
+function showBooks() {
+    let row = "";
+    for (let b of database.kitapResim.keys()) {
+	    row += '<div class="column"><div class="card"><img src=https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/kitapResim.txt/"' + database.kitapResim.get(b)[0].trim()+   '" style="width:100%"> <div class="container"><h2>Dedektif Kurukafa</h2><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
+    }
+    myTable.innerHTML += row;
+    elements += row;
+}
+</script>
 </body>
 </html>
