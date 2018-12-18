@@ -1,5 +1,5 @@
 1	s1.jpg	Dedektif Kurukafa	Derek Landy	macera
-2	s2.jpg	Dedektif Kurukafa Suratsýzlar	Derek Landy	macera
-3	s11.jpg	Küçük Prens	Antonie De Saint	macera
+2	s2.jpg	Dedektif Kurukafa SuratsÄ±zlar	Derek Landy	macera
+3	s11.jpg	KÃ¼Ã§Ã¼k Prens	Antonie De Saint	macera
 4	s12.jpg	Otomatik Portakal	Anthony Burgess	macera
-5	s17.jpg	Açlýk Oyunlarý	Suzanne Collins	macera
+5	s17.jpg	AÃ§lÄ±k OyunlarÄ±	Suzanne Collins	macera
