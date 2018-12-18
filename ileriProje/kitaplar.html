@@ -38,6 +38,9 @@ html {
 .title {
   color: grey;
 }
+.x {
+color:black;
+}
 .button {
   border: none;
   outline: 0;
@@ -131,8 +134,9 @@ function showBooks() {
 	
 	for (let b of database.kitapResim.keys()) {
 	    
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.kitapResim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><p>dedektif</p><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
-    }
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.kitapResim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><p class="x">' + kitapTur[x] + '</p><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
+    	x++;
+	}
     myTable.innerHTML += row;
     elements += row;
 }
