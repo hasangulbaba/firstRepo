@@ -2,45 +2,53 @@
 <html>
 <title>project web</title>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="database.js"></script>
 <style>
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
 .column {
   float: left;
   width: 33.3%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
+
 @media screen and (max-width: 650px) {
   .column {
     width: 50%;
     display: block;
   }
 }
+
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
+
 .container {
   padding: 0 16px;
 }
+
 .container::after, .row::after {
   content: "";
   clear: both;
   display: table;
 }
+
 .title {
   color: grey;
 }
 .x {
 color:black;
 }
+
 .button {
   border: none;
   outline: 0;
@@ -52,6 +60,7 @@ color:black;
   cursor: pointer;
   width: 100%;
 }
+
 .button:hover {
   background-color: #555;
 }
@@ -60,10 +69,17 @@ color:black;
   color: 	#5F9EA0;
   padding: 15px;
 }
+
+
+
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -75,71 +91,161 @@ body {
 </br>
 
 <center>
-<div id="myTable" style="display:inline;max-width:1000px">
+<div id="Table" style="display:inline;max-width:500px">
 </div>
 </center>
 
 
 <script>
-var elements = "";
+
+var show = "";
 const database = new Database();
-const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/text_files/";
+const url = "https://hasangulbaba.github.io/firstRepo/ileriProje/turler/";
 function readData(file) {
     console.log("readData "+file);
-    if(file.includes("kitapResim.txt")) {
+    if(file.includes("macera.txt")) {
       fetch(url+file)
           .then(r => r.text())
-          .then(addKitapResim).then(showBooks);
+          .then(addMacera).then(showMacera);
+    } 
+    else if(file.includes("bilim.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(addBilim).then(showBilim);
     }
-	else if(file.includes("kitaplar.txt")) {
+    else if(file.includes("tarih.txt")) {
       fetch(url+file)
           .then(r => r.text())
-          .then(addKitap).then(showBooks);
+          .then(addTarih).then(showTarih);
+    }
+    else if(file.includes("polisiye.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(addPolisiye).then(showPolisiye);
+    }
+	else if(file.includes("bilim kurgu.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(addBilimKurgu).then(showBilimKurgu);
+    }
+	else if(file.includes("yazılım.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
+          .then(addYazılım).then(showYazilim);
     }
     else {
 	console.log("File could not find.")
     }
 }
-
 function parse(line) {
     let b = line.split("\t");
     return b;
 }
 
-function addKitapResim(txt) {
+function addMacera(txt) {
     let a = txt.split("\n");
     for (let s of a) {
 		let std = parse(s);
-		database.kitapResim.set(std[0], [std[1], std[2]]);
+		database.macera.set(std[0], [std[1], std[2], std[3],std[4]]);
     }
 }
-function addKitap(txt) {
+function addBilim(txt) {
     let a = txt.split("\n");
     for (let s of a) {
 		let std = parse(s);
-		database.kitap.set(std[0], [std[1], std[2],std[3]]);
+		database.bilim.set(std[0], [std[1], std[2], std[3],std[4]]);
     }
 }
-readData("kitapResim.txt");
-readData("kitaplar.txt")
-function showBooks() {
+function addTarih(txt) {
+    let a = txt.split("\n");
+    for (let s of a) {
+		let std = parse(s);
+		database.tarih.set(std[0], [std[1], std[2], std[3],std[4]]);
+    }
+}
+function addPolisiye(txt) {
+    let a = txt.split("\n");
+    for (let s of a) {
+		let std = parse(s);
+		database.polisiye.set(std[0], [std[1], std[2], std[3],std[4]]);
+    }
+}
+function addBilimKurgu(txt) {
+    let a = txt.split("\n");
+    for (let s of a) {
+		let std = parse(s);
+		database.bilimKurgu.set(std[0], [std[1], std[2], std[3],std[4]]);
+    }
+}
+function addYazılım(txt) {
+    let a = txt.split("\n");
+    for (let s of a) {
+		let std = parse(s);
+		database.yazilim.set(std[0], [std[1], std[2], std[3],std[4]]);
+    }
+}
+readData("macera.txt");
+readData("bilim.txt");
+readData("yazılım.txt");
+readData("tarih.txt");
+readData("polisiye.txt");
+readData("bilim kurgu.txt");
+function showMacera() {
     let row = "";
-    let kitapTur=[];
-	let x=0;
-	for (let i of database.kitap.keys()) {
-	    kitapTur.push(database.kitap.get(i)[0]);
-	console.log(kitapTur[x]);
-	x++;
+    for (let b of database.macera.keys()) {
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.macera.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.macera.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.macera.get(b)[3]+ '</h4><p class="title">' + database.macera.get(b)[2] + '</p></div></div></div>';   
+    
 	}
-	
-	for (let b of database.kitapResim.keys()) {
-	    
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.kitapResim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><p class="x">' + kitapTur[x] + '</p><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
-    	x++;
-	}
-    myTable.innerHTML += row;
-    elements += row;
+    Table.innerHTML += row;
+    show += row;
 }
+function showBilim() {
+    let row = "";
+    for (let b of database.bilim.keys()) {
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.bilim.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.bilim.get(b)[3]+ '</h4><p class="title">' + database.bilim.get(b)[2] + '</p></div></div></div>';   
+    
+	}
+    Table.innerHTML += row;
+    show += row;
+}
+function showTarih() {
+    let row = "";
+    for (let b of database.tarih.keys()) {
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.tarih.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.tarih.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.tarih.get(b)[3]+ '</h4><p class="title">' + database.tarih.get(b)[2] + '</p></div></div></div>';   
+    
+	}
+    Table.innerHTML += row;
+    show += row;
+}
+function showPolisiye() {
+    let row = "";
+    for (let b of database.polisiye.keys()) {
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.polisiye.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.polisiye.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.polisiye.get(b)[3]+ '</h4><p class="title">' + database.polisiye.get(b)[2] + '</p></div></div></div>';   
+    
+	}
+    Table.innerHTML += row;
+    show += row;
+}
+function showBilimKurgu() {
+    let row = "";
+    for (let b of database.bilimKurgu.keys()) {
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilimKurgu.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.bilimKurgu.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.bilimKurgu.get(b)[3]+ '</h4><p class="title">' + database.bilimKurgu.get(b)[2] + '</p></div></div></div>';   
+    
+	}
+    Table.innerHTML += row;
+    show += row;
+}
+function showYazilim() {
+    let row = "";
+    for (let b of database.yazilim.keys()) {
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.yazilim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.yazilim.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.yazilim.get(b)[3]+ '</h4><p class="title">' + database.yazilim.get(b)[2] + '</p></div></div></div>';   
+    
+	}
+    Table.innerHTML += row;
+    show += row;
+}
+
+
 </script>
 
 </body>
