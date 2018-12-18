@@ -107,7 +107,7 @@ readData("kitapResim.txt");
 function showBooks() {
     let row = "";
     for (let b of database.kitapResim.keys()) {
-	    row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/"'+database.kitapResim.get(b)[0]+'" style="width:100%"><div class="container"><h2>Dedektif Kurukafa</h2><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
+	    row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.kitapResim.get(b)[0]+'" style="width:100%"><div class="container"><h2>Dedektif Kurukafa</h2><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
     }
     myTable.innerHTML += row;
     elements += row;
