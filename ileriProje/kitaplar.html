@@ -86,28 +86,51 @@ function readData(file) {
     if(file.includes("kitapResim.txt")) {
       fetch(url+file)
           .then(r => r.text())
+          .then(addKitapResim).then(showBooks);
+    }
+	else if(file.includes("kitaplar.txt")) {
+      fetch(url+file)
+          .then(r => r.text())
           .then(addKitap).then(showBooks);
-    } 
+    }
     else {
 	console.log("File could not find.")
     }
 }
+
 function parse(line) {
     let b = line.split("\t");
     return b;
 }
-function addKitap(txt) {
+
+function addKitapResim(txt) {
     let a = txt.split("\n");
     for (let s of a) {
 		let std = parse(s);
 		database.kitapResim.set(std[0], [std[1], std[2]]);
     }
 }
-readData("kitapResim.txt");
+function addKitap(txt) {
+    let a = txt.split("\n");
+    for (let s of a) {
+		let std = parse(s);
+		database.kitap.set(std[0], [std[1], std[2],std[3]]);
+    }
+}
+readData("kitapResim.txt")
 function showBooks() {
     let row = "";
-    for (let b of database.kitapResim.keys()) {
-	    row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.kitapResim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h2>Dedektif Kurukafa</h2><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
+    let kitapTur=[];
+	let x=0;
+	for (let i of database.kitap.keys()) {
+	    kitapTur.push(database.kitap.get(i)[0]);
+	console.log(kitapTur[x]);
+	x++;
+	}
+	
+	for (let b of database.kitapResim.keys()) {
+	    
+		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.kitapResim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><p>dedektif</p><p class="title">' + database.kitapResim.get(b)[1] + '</p></div></div></div>';   
     }
     myTable.innerHTML += row;
     elements += row;
