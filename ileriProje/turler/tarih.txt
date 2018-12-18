@@ -1,0 +1,4 @@
+1	s20.jpg	Müslüman Türk Devletleri Tarihi	Erdoðan Merçil	tarih
+2	s21.jpg	Dünya Tarihi	William Mcneil	tarih
+3	s7.jpg	Osmanlý Tarihi	Erhan Afyoncu	tarih
+4	s3.jpg	Fatih Sultan Mehmet	Erhan Afyoncu	tarih

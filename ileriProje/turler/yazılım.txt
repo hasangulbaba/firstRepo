@@ -1,0 +1,4 @@
+1	s18.jpg	Yazýlým Mühendisliðine Giriþ	Timur Karaçay	yazýlým
+2	s19.jpg	Java Script	Fahrettin Erdinç	yazýlým
+3	s5.jpg	Yazýlým Mimarýnýn El Kitabý	Aykut Taþdelen	yazýlým
+4	s4.jpg	Yeni Baþlayanlar Ýçin Java	Mehmet Kirazlý	yazýlým

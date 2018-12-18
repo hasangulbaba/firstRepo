@@ -1,0 +1,4 @@
+1	s10.jpg	Gözlerini Sýmsýký Kapat	John Verdon	polisiye
+2	s8.jpg	Aklýndan Bir Sayý Tut	John Verdon	polisiye
+3	s9.jpg	Gözlerini Sýmsýký Kapat	John Verdon	polisiye
+4	s28.jpg	Kim Bulduysa Onundur	Stephen King	polisiye

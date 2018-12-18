@@ -1,0 +1,5 @@
+1	s16.jpg	Paralel Dünyalar	Ahmet Saatçioðlu	bilim kurgu
+2	s24.jpg	Harry Potter ve Sýrlar Odasý	Rowling	bilim kurgu
+3	s25.jpg	Harry Potter ve Felsefe Taþý	Rowling	bilim kurgu
+4	s26.jpg	Harry Potter ve Ateþ Kadehi	Rowling	bilim kurgu
+5	s27.jpg	Harry Potter ve Ölüm Yadigarlarý	Rowling	bilim kurgu
