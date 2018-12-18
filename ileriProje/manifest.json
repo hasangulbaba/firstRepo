@@ -8,11 +8,11 @@
   "theme_color": "green",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "icon.jpg",
       "sizes": "411x413",
       "type": "image/png"
     }, {
-      "src": "iconBig.png",
+      "src": "iconBig.jpg",
       "sizes": "450x450",
       "type": "image/png"
     }
