@@ -60,22 +60,6 @@ html {
 }
 
 
-#myDIV {
-    width: 310px;
-    height: 25px;
-    border: 15px solid coral;
-    -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
-    animation: mymove 5s infinite;
-}
-
-/* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
-    50% {border-color: lightblue;}
-}
-
-@keyframes mymove {
-    50% {border-color: lightblue;}
-}
 
 
 
@@ -84,8 +68,8 @@ html {
   width:100%;
 }
 table, th, td {
-  border: 1px  white;
-  color:white;
+  border: 1px  black;
+  color:black;
  
 }
 th, td {
@@ -111,8 +95,25 @@ h1 {
 }
 
 body  {
-    background-image: url("https://dusunbil.com/wp-content/uploads/2016/09/libraries.jpg");
-   
+    background-image: url("https://wallpapers.wallhalla.com/WAoQpgrZCA0_YPT13N0_e69992d1/aHR0cHM6Ly9hbHBoYS53YWxsaGF2ZW4uY2Mvd2FsbHBhcGVyLzMzMDY3NQ==");
+}
+
+.button {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button3 {border-radius: 8px;}
+.button3:hover {
+  background-color: #555555;
+  color: white;
 }
 </style>
 
@@ -138,26 +139,24 @@ body  {
 </nav><br>
 
 <center>
-<h1>İSTEDİĞİNİZ TÜRÜ SEÇEBİLİRSİNİZ</h1>
-<div id="myDIV">  <button onclick="maceraBul()">macera</button>
-  <button onclick="bilimBul()">bilim</button>
-  <button onclick="bilimKurguBul()">bilim kurgu</button>
-  <button onclick="tarihBul()">tarih</button>
-  <button onclick="yazılımBul()">yazılım</button>
-</div>
+<button class="button button3" onclick="maceraBul()">Macera</button>
+<button class="button button3" onclick="bilimBul()">bilim</button>
+<button class="button button3" onclick="bilimKurguBul()">bilim kurgu</button>
+<button class="button button3" onclick="tarihBul()">tarih</button>
+<button class="button button3" onclick="yazılımBul()">yazılım</button>
 <center>
 
 
 <br>
-<table>
-<br>
-<button onclick="search()">Yazar Sorgu</button>
-</br>
+
+
+<button class="button button3" onclick="search()">Yazar Sorgu</button>
+
   <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left;">Yazar giriniz:</text></th>
+   <th><text style="font-weight:bold;text-align:left; color:white">Yazar giriniz:</text></th>
    <th><input type=text id=yazarTur></th> 
   </tr>
-</table>
+
 </br>
 
 <h1>Kütüphane Kitap Tablosu</h1>
