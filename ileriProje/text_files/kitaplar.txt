@@ -1,0 +1,28 @@
+1	Dünya Ve Uzay	Meb	bilim
+2	Cosmos	Neil Tyson	bilim
+3	Kara Delikler	Stephen Hawking	bilim
+4	Thomas Calculus	Joel Hass	bilim
+5	Temel Moleküler Biyoloji	Lizabeth Allison	bilim
+6	Differaential Equation	Seyfettin Fakýoðlu	bilim
+7	Paralel Dünyalar	Ahmet Saatçioðlu	bilim kurgu
+8	Harry Potter ve Sýrlar Odasý	Rowling	bilim kurgu
+9	Harry Potter ve Felsefe Taþý	Rowling	bilim kurgu
+10	Harry Potter ve Ateþ Kadehi	Rowling	bilim kurgu
+11	Harry Potter ve Ölüm Yadigarlarý	Rowling	bilim kurgu
+12	Dedektif Kurukafa	Derek Landy	macera
+13	Dedektif Kurukafa Suratsýzlar	Derek Landy	macera
+14	Küçük Prens	Antonie De Saint	macera
+15	Otomatik Portakal	Anthony Burgess	macera
+16	Açlýk Oyunlarý	Suzanne Collins	macera
+17	Gözlerini Sýmsýký Kapat	John Verdon	polisiye
+18	Aklýndan Bir Sayý Tut	John Verdon	polisiye
+19	Gözlerini Sýmsýký Kapat	John Verdon	polisiye
+20	Kim Bulduysa Onundur	Stephen King	polisiye
+21	Müslüman Türk Devletleri Tarihi	Erdoðan Merçil	tarih
+22	Dünya Tarihi	William Mcneil	tarih
+23	Osmanlý Tarihi	Erhan Afyoncu	tarih
+24	Fatih Sultan Mehmet	Erhan Afyoncu	tarih
+25	Yazýlým Mühendisliðine Giriþ	Timur Karaçay	yazýlým
+26	Java Script	Fahrettin Erdinç	yazýlým
+27	Yazýlým Mimarýnýn El Kitabý	Aykut Taþdelen	yazýlým
+28	Yeni Baþlayanlar Ýçin Java	Mehmet Kirazlý	yazýlým
