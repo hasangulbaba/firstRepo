@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="TR">
 <title>project web</title>
 <head>
 <meta charset="UTF-8"/>
@@ -21,19 +21,18 @@ html {
   padding: 0 8px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .column {
     width: 50%;
     display: block;
   }
-   image{
-	  width:50px;
-	  height:200px;
-  }
+
 }
+
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width:250px;
 }
 
 .container {
@@ -80,6 +79,7 @@ color:black;
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
+  color:black;
 }
 
 
@@ -95,7 +95,7 @@ body {
 </br>
 
 <center>
-<div id="Table" style="display:inline;max-width:500px">
+<div id="Table" style="display:inline;max-width:500px";>
 </div>
 </center>
 
@@ -197,7 +197,7 @@ readData("bilim kurgu.txt");
 function showMacera() {
     let row = "";
     for (let b of database.macera.keys()) {
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.macera.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.macera.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.macera.get(b)[3]+ '</h4><p class="title">' + database.macera.get(b)[2] + '</p></div></div></div>';   
+		row += '<div class="column"><a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.macera.get(b)[0]+'"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.macera.get(b)[0]+'" style="width:200px;height:300px;max-width: -webkit-fill-available;"></a><div class="container"><h4 style="min-height:100px">' + database.macera.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.macera.get(b)[3]+ '</h4><p class="title">' + database.macera.get(b)[2] + '</p></div></div></div>';   
     
 	}
     Table.innerHTML += row;
@@ -206,7 +206,7 @@ function showMacera() {
 function showBilim() {
     let row = "";
     for (let b of database.bilim.keys()) {
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.bilim.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.bilim.get(b)[3]+ '</h4><p class="title">' + database.bilim.get(b)[2] + '</p></div></div></div>';   
+		row += '<div class="column"><a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilim.get(b)[0]+'"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilim.get(b)[0]+'" style="width:200px;height:300px;max-width: -webkit-fill-available;"></a><div class="container"><h4 style="min-height:100px">' + database.bilim.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.bilim.get(b)[3]+ '</h4><p class="title">' + database.bilim.get(b)[2] + '</p></div></div></div>';   
     
 	}
     Table.innerHTML += row;
@@ -215,7 +215,7 @@ function showBilim() {
 function showTarih() {
     let row = "";
     for (let b of database.tarih.keys()) {
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.tarih.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.tarih.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.tarih.get(b)[3]+ '</h4><p class="title">' + database.tarih.get(b)[2] + '</p></div></div></div>';   
+		row += '<div class="column"><a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.tarih.get(b)[0]+'"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.tarih.get(b)[0]+'" style="width:200px;height:300px;max-width: -webkit-fill-available;"></a><div class="container"><h4 style="min-height:100px">' + database.tarih.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.tarih.get(b)[3]+ '</h4><p class="title">' + database.tarih.get(b)[2] + '</p></div></div></div>';   
     
 	}
     Table.innerHTML += row;
@@ -224,7 +224,7 @@ function showTarih() {
 function showPolisiye() {
     let row = "";
     for (let b of database.polisiye.keys()) {
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.polisiye.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.polisiye.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.polisiye.get(b)[3]+ '</h4><p class="title">' + database.polisiye.get(b)[2] + '</p></div></div></div>';   
+		row += '<div class="column"><a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.polisiye.get(b)[0]+'"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.polisiye.get(b)[0]+'" style="width:200px;height:300px;max-width: -webkit-fill-available;"></a><div class="container"><h4 style="min-height:100px">' + database.polisiye.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.polisiye.get(b)[3]+ '</h4><p class="title">' + database.polisiye.get(b)[2] + '</p></div></div></div>';   
     
 	}
     Table.innerHTML += row;
@@ -233,7 +233,7 @@ function showPolisiye() {
 function showBilimKurgu() {
     let row = "";
     for (let b of database.bilimKurgu.keys()) {
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilimKurgu.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.bilimKurgu.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.bilimKurgu.get(b)[3]+ '</h4><p class="title">' + database.bilimKurgu.get(b)[2] + '</p></div></div></div>';   
+		row += '<div class="column"><a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilimKurgu.get(b)[0]+'"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.bilimKurgu.get(b)[0]+'" style="width:200px;height:300px;max-width: -webkit-fill-available;"></a><div class="container"><h4 style="min-height:100px">' + database.bilimKurgu.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.bilimKurgu.get(b)[3]+ '</h4><p class="title">' + database.bilimKurgu.get(b)[2] + '</p></div></div></div>';   
     
 	}
     Table.innerHTML += row;
@@ -242,7 +242,7 @@ function showBilimKurgu() {
 function showYazilim() {
     let row = "";
     for (let b of database.yazilim.keys()) {
-		row += '<div class="column"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.yazilim.get(b)[0]+'" style="width:200px;height:300px"><div class="container"><h4 style="min-height:100px">' + database.yazilim.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.yazilim.get(b)[3]+ '</h4><p class="title">' + database.yazilim.get(b)[2] + '</p></div></div></div>';   
+		row += '<div class="column"><a target="_blank" href="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.yazilim.get(b)[0]+'"><div class="card"><img src="https://hasangulbaba.github.io/firstRepo/ileriProje/resim/'+database.yazilim.get(b)[0]+'" style="width:200px;height:300px;max-width: -webkit-fill-available;"></a><div class="container"><h4 style="min-height:100px">' + database.yazilim.get(b)[1]+ '</h4><h4 style="min-height:100px">Tür:' + database.yazilim.get(b)[3]+ '</h4><p class="title">' + database.yazilim.get(b)[2] + '</p></div></div></div>';   
     
 	}
     Table.innerHTML += row;
