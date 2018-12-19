@@ -25,4 +25,4 @@
 4- [HW4](https://hasangulbaba.github.io/firstRepo/index.html)
 
                   ---Project---
- 1- [P1](https://hasangulbaba.github.io/firstRepo/ileriProje/deneme.html)
+ 1- [P1](https://hasangulbaba.github.io/firstRepo/ileriProje/index.html)
