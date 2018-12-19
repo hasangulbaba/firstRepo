@@ -1,6 +1,6 @@
-1	s13.jpg	Dünya Ve Uzay	Meb	bilim
+1	s13.jpg	DÃ¼nya Ve Uzay	Meb	bilim
 2	s14.jpg	Cosmos	Neil Tyson	bilim
 3	s15.jpg	Kara Delikler	Stephen Hawking	bilim
 4	s22.jpg	Thomas Calculus	Joel Hass	bilim
-5	s23.jpg	Temel Moleküler Biyoloji	Lizabeth Allison	bilim
-6	s6.jpg	Differaential Equation	Seyfettin Fakýoðlu	bilim
+5	s23.jpg	Temel MolekÃ¼ler Biyoloji	Lizabeth Allison	bilim
+6	s6.jpg	Differaential Equation	Seyfettin FakÄ±oÄŸlu	bilim

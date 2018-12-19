@@ -1,4 +1,4 @@
-1	s18.jpg	Yazılım Mühendisliğine Giriş	Timur Karaçay	yazılım
-2	s19.jpg	Java Script	Fahrettin Erdinç	yazılım
-3	s5.jpg	Yazılım Mimarının El Kitabı	Aykut Taşdelen	yazılım
-4	s4.jpg	Yeni Başlayanlar İçin Java	Mehmet Kirazlı	yazılım
+1	s18.jpg	YazÄ±lÄ±m MÃ¼hendisliÄŸine GiriÅŸ	Timur KaraÃ§ay	yazÄ±lÄ±m
+2	s19.jpg	Java Script	Fahrettin ErdinÃ§	yazÄ±lÄ±m
+3	s5.jpg	YazÄ±lÄ±m MimarÄ±nÄ±n El KitabÄ±	Aykut TaÅŸdelen	yazÄ±lÄ±m
+4	s4.jpg	Yeni BaÅŸlayanlar iÃ§in Java	Mehmet KirazlÄ±	yazÄ±lÄ±m
