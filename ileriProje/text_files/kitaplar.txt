@@ -1,28 +1,28 @@
-1	Dünya Ve Uzay	Meb	bilim
+1	DÃ¼nya Ve Uzay	Meb	bilim
 2	Cosmos	Neil Tyson	bilim
 3	Kara Delikler	Stephen Hawking	bilim
 4	Thomas Calculus	Joel Hass	bilim
-5	Temel Moleküler Biyoloji	Lizabeth Allison	bilim
-6	Differaential Equation	Seyfettin Fakıoğlu	bilim
-7	Paralel Dünyalar	Ahmet Saatçioğlu	bilim kurgu
-8	Harry Potter ve Sırlar Odası	Rowling	bilim kurgu
-9	Harry Potter ve Felsefe Taşı	Rowling	bilim kurgu
-10	Harry Potter ve Ateş Kadehi	Rowling	bilim kurgu
-11	Harry Potter ve Ölüm Yadigarları	Rowling	bilim kurgu
+5	Temel MolekÃ¼ler Biyoloji	Lizabeth Allison	bilim
+6	Differaential Equation	Seyfettin FakÄ±oÄŸlu	bilim
+7	Paralel DÃ¼nyalar	Ahmet SaatÃ§ioÄŸlu	bilim kurgu
+8	Harry Potter ve SÄ±rlar OdasÄ±	Rowling	bilim kurgu
+9	Harry Potter ve Felsefe TaÅŸÄ±	Rowling	bilim kurgu
+10	Harry Potter ve AteÅŸ Kadehi	Rowling	bilim kurgu
+11	Harry Potter ve Ã–lÃ¼m YadigarlarÄ±	Rowling	bilim kurgu
 12	Dedektif Kurukafa	Derek Landy	macera
-13	Dedektif Kurukafa Suratsızlar	Derek Landy	macera
-14	Küçük Prens	Antonie De Saint	macera
+13	Dedektif Kurukafa SuratsÄ±zlar	Derek Landy	macera
+14	KÃ¼Ã§Ã¼k Prens	Antonie De Saint	macera
 15	Otomatik Portakal	Anthony Burgess	macera
-16	Açlık Oyunları	Suzanne Collins	macera
-17	Gözlerini Sımsıkı Kapat	John Verdon	polisiye
-18	Aklından Bir Sayı Tut	John Verdon	polisiye
-19	Gözlerini Sımsıkı Kapat	John Verdon	polisiye
+16	AÃ§lÄ±k OyunlarÄ±	Suzanne Collins	macera
+17	GÃ¶zlerini SÄ±msÄ±kÄ± Kapat	John Verdon	polisiye
+18	AklÄ±ndan Bir SayÄ± Tut	John Verdon	polisiye
+19	GÃ¶zlerini SÄ±msÄ±kÄ± Kapat	John Verdon	polisiye
 20	Kim Bulduysa Onundur	Stephen King	polisiye
-21	Müslüman Türk Devletleri Tarihi	Erdoğan Merçil	tarih
-22	Dünya Tarihi	William Mcneil	tarih
-23	Osmanlı Tarihi	Erhan Afyoncu	tarih
+21	MÃ¼slÃ¼man TÃ¼rk Devletleri Tarihi	ErdoÄŸan MerÃ§il	tarih
+22	DÃ¼nya Tarihi	William Mcneil	tarih
+23	OsmanlÄ± Tarihi	Erhan Afyoncu	tarih
 24	Fatih Sultan Mehmet	Erhan Afyoncu	tarih
-25	Yazılım Mühendisliğine Giriş	Timur Karaçay	yazılım
-26	Java Script	Fahrettin Erdinç	yazılım
-27	Yazılım Mimarının El Kitabı	Aykut Taşdelen	yazılım
-28	Yeni Başlayanlar İçin Java	Mehmet Kirazlı	yazılım
+25	YazÄ±lÄ±m MÃ¼hendisliÄŸine GiriÅŸ	Timur KaraÃ§ay	yazÄ±lÄ±m
+26	Java Script	Fahrettin ErdinÃ§	yazÄ±lÄ±m
+27	YazÄ±lÄ±m MimarÄ±nÄ±n El KitabÄ±	Aykut TaÅŸdelen	yazÄ±lÄ±m
+28	Yeni BaÅŸlayanlar iÃ§in Java	Mehmet KirazlÄ±	yazÄ±lÄ±m
