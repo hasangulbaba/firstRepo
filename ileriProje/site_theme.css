@@ -1,3 +1,4 @@
+<meta charset="UTF-8"/>
 //* Responsive navigation menu (for mobile devices) */
 @media screen and (max-width: 600px) {
   .nav a, .nav li, .card{
