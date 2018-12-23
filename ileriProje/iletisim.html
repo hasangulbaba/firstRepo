@@ -6,11 +6,57 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+
+<body style="background-color:#808080;>
+<style>  //burası sayfanın ortasında olmasını sağlıyor bütün elemanların
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
+
 </style>
-<body>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+<div class="topnav">
+  <a href="https://hasangulbaba.github.io/firstRepo/ileriProje/deneme.html">Anasayfa</a>
+  <a href="https://hasangulbaba.github.io/firstRepo/ileriProje/kitaplar.html">Kitapları Görüntüle</a>
+  <a href="https://hasangulbaba.github.io/firstRepo/ileriProje/admin.html">Admin</a>
+  <a href="https://hasangulbaba.github.io/firstRepo/ileriProje/hizliErisim.html">HızlıErisim</a>
+</div>
 
 <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
     <h2 class="w3-wide w3-center">CONTACT</h2>
@@ -21,20 +67,29 @@ body {font-family: "Lato", sans-serif}
         <i class="fa fa-phone" style="width:30px"></i> Phone: +09 549 1905<br>
         <i class="fa fa-envelope" style="width:30px"> </i> Email: advanceLibrary@gmail.com<br>
       </div>
-      <div class="w3-col m6">
-        <form action="/action_page.php" target="_blank">
-          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      
+	  <div class="w3-col m6">
+        <form>
+          
+		  <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            
+			<div class="w3-half">
+			  <input type="text" placeholder="Name" required name="Name" id=name>
             </div>
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            
+			<div class="w3-half">
+			  <input type=text placeholder="Email" required name="Email" id=email>
             </div>
-          </div>
-          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+          
+		  </div>
+           
+		  <textarea id="subject" name="subject" placeholder="Message" required name="Message" style="height:100px"></textarea>
+			<center>
+          <button onclick="gönderiOk()">Send</button>
+		  <center>
         </form>
       </div>
+	  
     </div>
   </div>
 </div>
@@ -48,6 +103,15 @@ body {font-family: "Lato", sans-serif}
   <i class="fa fa-linkedin w3-hover-opacity"></i>
   <p class="w3-medium">Powered by <a href="https://hasangulbaba.github.io/firstRepo/" target="_blank">HasanGULBABA</a></p>
 </footer>
+<script>
 
+function gönderiOk(){
+if((name.value && Email.value && subject.value)=""){
+window.alert("İletiniz Gönderilmiştir, Teşekkürler");
+}
+else{window.alert("Lütfen gerekli alanları doldurunuz.");}
+}
+
+</script>
 </body>
 </html>
