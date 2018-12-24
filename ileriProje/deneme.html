@@ -371,7 +371,7 @@ function search() {
 	
 	for (let b of database.kitap.keys()) {
 		strin= database.kitap.get(b)[1].trim();
-		if (strin== yazarTur.value) {
+		if (strin.toUpperCase()== yazarTur.value.toUpperCase()) {
 			row = "<th>"+i+"</th>";
        for (let i = 0; i < 3; i++) {
       		console.log(database.kitap.get(b)[i]);
