@@ -112,7 +112,6 @@ body  {
   background-color: #555555;
   color: white;
 }
-
 [class^="top"] {
   background: yellow;
 }
@@ -121,9 +120,13 @@ body  {
 </head>
 <body>
 <div class="header">
-  <h1>ADVANCED KÜTÜPHANE</h1>
+  <h1>ADVANCE KÜTÜPHANE</h1>
 </div>
 
+<embed src = "Eminem - Venom.mp3" autostart = true hidden = true>
+<noembed>
+<bgsound src ="Eminem - Venom.mp3.https://www.youtube.com/watch?v=8CdcCD5V-d8">
+</noembed>
 
 <nav>
 
@@ -138,11 +141,12 @@ body  {
 </nav><br>
 
 <center>
+<button class="button button3" onclick="makeRows()">Tüm Türler</button>
 <button class="button button3" onclick="maceraBul()">Macera</button>
-<button class="button button3" onclick="bilimBul()">bilim</button>
-<button class="button button3" onclick="bilimKurguBul()">bilim kurgu</button>
-<button class="button button3" onclick="tarihBul()">tarih</button>
-<button class="button button3" onclick="yazılımBul()">yazılım</button>
+<button class="button button3" onclick="bilimBul()">Bilim</button>
+<button class="button button3" onclick="bilimKurguBul()">Bilim Kurgu</button>
+<button class="button button3" onclick="tarihBul()">Tarih</button>
+<button class="button button3" onclick="yazılımBul()">Yazılım</button>
 <center>
 
 
@@ -215,7 +219,6 @@ function makeRows() {
     tablo.innerHTML = text; out.innerText = t; 
 	
 }
-
 //burası seçilen türlerin gelme yeri
 function maceraBul(){
 	let row = "<th></th>";
