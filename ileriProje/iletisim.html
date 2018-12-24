@@ -106,11 +106,12 @@ body {
 <script>
 
 function gönderiOk(){
-if((name.value && Email.value && subject.value)=""){
+if((document.getElementById("name").value.length >0 && document.getElementById("Email").value.length >0 && document.getElementById("subject").value.length >0)){
 window.alert("İletiniz Gönderilmiştir, Teşekkürler");
 }
 else{window.alert("Lütfen gerekli alanları doldurunuz.");}
 }
+
 
 </script>
 </body>
