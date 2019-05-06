@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Regular Expression</title>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+
+<style>
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #2196F3;
+  color: dodgerblue
+}
+
+.info:hover {
+  background: #2196F3;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.warning:hover {
+  background: #ff9800;
+  color: white;
+}
+
+/* Red */
+.danger {
+  border-color: #f44336;
+  color: red
+}
+
+.danger:hover {
+  background: #f44336;
+  color: white;
+}
+
+/* Gray */
+.default {
+  border-color: #e7e7e7;
+  color: black;
+}
+
+.default:hover {
+  background: #e7e7e7;
+}
+</style>
+<style>
+  
+ .containerContent {
+        margin-top: 25px;
+        margin-left: 10px;
+      }
+      .containerContent p {
+        color: #000000;
+        font-size: 16px;
+      }
+	  .containerTable {
+        width: 100%;
+      }
+      .containerTable table {
+        margin: 25px 0;
+        width: 100%;
+        text-align: center;
+        display: block;
+        border-collapse: collapse;
+        border-spacing: 0;
+        box-sizing: inherit;
+        line-height: 1.4;
+        width: auto;
+      }
+      .containerTable table tbody {
+        box-sizing: inherit;
+        display: table-row-group;
+        border-color: inherit;
+        width: auto;
+      }
+      .containerTable table tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+      }
+      .containerTable table th {
+        padding: 10px 20px;
+        color: #323330;
+        background-color:#00c496;
+        border-bottom: 2px solid #323330;
+        font-weight: bold;
+        display: table-cell;
+        text-align: center;
+      }
+      .containerTable table td {
+        font-family: Consolas, "courier new";
+        font-size: 16px;
+        color: #323330;
+        border: 1px solid #dddddd;
+        padding: 8px;
+      }
+	  <!-- next button -->
+
+.info {background-color: #2196F3;} /* Blue */
+.info:hover {background: #0b7dda;}
+	<!-- cevap tablo -->
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+	  </style>
+	  
+
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Hasan<br>Gulbaba</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#showcase" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Exercise Game</a> 
+    <a href="#services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">What is Regex</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Rules</a> 
+    <a href="#packages" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Refference</a> 
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Hasan Gulbaba</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Regular Expression</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>How to Play.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+ <p> . Size verilen text'in output'u verilen patternin sağlayıp sağlamadığını cevaplandırın.</p>
+ <p> . Cevabınız doğru ise 10 puan alırsınız değilse oyun biter hepsini bilirseniz oyunu kazanmış olursunuz.</p>
+
+  <!-- Modal for full size images on click-->
+ 
+  <!-- game -->
+  <div class="w3-container" id="services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>competition.</b></h1>
+    <hr style="width:150px;border:5px solid red" class="w3-round">
+    
+	<br><div class="w3-bar w3-red">
+  <a  onClick="x(0)" class="w3-bar-item w3-button">example1</a>
+  <a  onClick="x(1)" class="w3-bar-item w3-button">example2</a>
+  <a  onClick="x(2)" class="w3-bar-item w3-button">example3</a>
+  <a  onClick="x(3)" class="w3-bar-item w3-button">example4</a>
+  <a  onClick="x(4)" class="w3-bar-item w3-button">example5</a>
+  <a  onClick="x(5)" class="w3-bar-item w3-button">example6</a>
+  <a  onClick="x(6)" class="w3-bar-item w3-button">example7</a>
+  <a  onClick="x(7)" class="w3-bar-item w3-button">example8</a>
+  <a  onClick="x(8)" class="w3-bar-item w3-button">example9</a>
+    </div>
+	
+	<p id="demo"></p>
+	<h1>Start competition</h1>
+	<div id="question" onchange="saveVal()">
+	<p>1 Which of the following matches regexp /a(ab)*a/
+	</p><input type="radio" name="skill" id="cb1" value="abababa"> abababa<br><input type="radio" name="skill" id="cb2" value="aaba"> aaba<br/><input type="radio" name="skill" id="cb3" value="aabbaa"> aabbaa<br><input type="radio" name="skill" id="cb4" value="aba"> aba<br/><input type="radio" name="skill" id="cb5"  value="aabababa"> aabababa';
+	
+	</div>
+	
+	<br>
+	<button class="btn info" onClick="previousButton()"><< Previous</button>
+	<button class="btn info" onClick="nextButton()">Next >></button>
+	</br>
+	<br>
+	<button class="btn danger" onClick="showResult()">Show Result</button>
+	<button class="btn danger" onClick="start()">Start Competition</button>
+	</br>
+	<h2>Comparison Table</h2>
+
+<table id="comparisonTable">
+  
+</table>
+<p id="point">
+</p>
+
+<hr>
+<script>
+var page = 0;
+var sorular = [];
+sorular[0] = '<p>1 Which of the following matches regexp /a(ab)*a/</p><input type="radio" name="skill" id="cb1" value="abababa"> abababa<br><input type="radio" name="skill" id="cb2"   value="aaba"> aaba<br/><input type="radio" name="skill" id="cb3"   value="aabbaa"> aabbaa<br><input type="radio" name="skill" id="cb4"   value="aba"> aba<br/><input type="radio" name="skill" id="cb5"   value="aabababa"> aabababa';
+sorular[1] = '<p>2 Which of the following matches regexp /ab+c?/</p><input type="radio" name="skill" id="cb6" value="abc"> abc<br><input type="radio" name="skill" id="cb7" value="ac"> ac<br/><input type="radio" name="skill" id="cb8" value="abbb"> abbb<br><input type="radio" name="skill" id="cb9" value="bbc"> bbc<br/>'
+sorular[2] = '<p>3 Which of the following matches regexp /abc|xyz/</p><input type="radio" name="skill" id="cb10" value="abc"> abc<br><input type="radio" name="skill" id="cb11" value="xyz"> xyz<br/><input type="radio" name="skill" id="cb12" value="abc|xyz"> abc|xyz'
+sorular[3] = '<p>4 Which of the following matches regexp /a.[bc]+/</p><input type="radio" name="skill" id="cb13" value="abc"> abc<br><input type="radio" name="skill" id="cb14" value="abbbbbbbb"> abbbbbbbb<br/><input type="radio" name="skill" id="cb15" value="azc"> azc<br><input type="radio" name="skill" id="cb16" value="abcbcbcbc"> abcbcbcbc<br/><input type="radio" name="skill" id="cb17" value="ac"> ac<br><input type="radio" name="skill" id="cb18" value="asccbbbbcbcccc"> asccbbbbcbcccc<br/>'
+sorular[4] = '<p>5 Which of the following matches regexp /[a-z]+[\.\?!]/</p><input type="radio" name="skill" id="cb19" value="battle!"> battle!<br><input type="radio" name="skill" id="cb20" value="Hot"> Hot<br/><input type="radio" name="skill" id="cb21" value="green"> green<br><input type="radio" name="skill" id="cb22" value="jump up."> jump up.<br/><input type="radio" name="skill" id="cb23" value="undulate?"> undulate?<br><input type="radio" name="skill" id="cb24" value="is.?"> is.?<br/><input type="radio" name="skill" id="cb25" value="swamping."> swamping.'
+sorular[5] = '<p>6 Which of the following matches regexp /[a-zA-Z]*[^,]=/</p><input type="radio" name="skill" id="cb26" value="Butt="> Butt=<br><input type="radio" name="skill" id="cb27" value="BotHEr,="> BotHEr,=<br/><input type="radio" name="skill" id="cb28" value="Ample"> Ample<br><input type="radio" name="skill" id="cb29" value="FIdDlE7h="> FIdDlE7h=<br/><input type="radio" name="skill" id="cb30" value="Brittle ="> Brittle =<br><input type="radio" name="skill" id="cb31" value="Other.="> Other.=<br/>'
+sorular[6] = '<p>7 Which of the following matches regexp /[a-z][\.\?!]\s+[A-Z]/(\s matches any space character)</p><input type="radio" name="skill" id="cb32" value="A. B"> A. B<br><input type="radio" name="skill" id="cb33" value="c! d"> c! d<br/><input type="radio" name="skill" id="cb34" value="e f"> e f<br><input type="radio" name="skill" id="cb35" value="g.   H"> g.   H<br/><input type="radio" name="skill" id="cb36" value="i?  J"> i?  J<br><input type="radio" name="skill" id="cb37" value="k L"> k L<br/>'
+sorular[7] = '<p>8 Which of the following matches regexp /(very )+(fat )?(tall|ugly) man/</p><input type="radio" name="skill" id="cb38" value="very fat man"> very fat man<br><input type="radio" name="skill" id="cb39" value="fat tall man"> fat tall man<br/><input type="radio" name="skill" id="cb40" value="very very fat ugly man"> very very fat ugly man<br><input type="radio" name="skill" id="cb41" value="very very very tall man"> very very very tall man<br/>'
+sorular[8] = '<p>9 Which of the following matches regexp /<[^>]+>/</p><input type="radio" name="skill" id="cb42" value="<an xml tag>"> &lt;an xml tag&gt<br><input type="radio" name="skill" id="cb43" value="<opentag> <closetag>"> &lt;opentag&gt; &lt;closetag&gt;<br/><input type="radio" name="skill" id="cb44" value="</closetag> "> &lt;/closetag&gt;<br><input type="radio" name="skill" id="cb45" value="<>"> &lt;&gt;<br/><input type="radio" name="skill" id="cb46" value="<with attribute=”77”>"> &lt;with attribute=”77”&gt;'
+
+function saveVal(){
+var xy = document.querySelector('input[name="skill"]:checked').value;
+userAnswers[page]=xy;
+}
+
+var answerKey = ["aaba","abc","asccbbbbcbcccc","xyz","undulate?","Other.=","i?  J","very very fat ugly man","<an xml tag>"];
+var userAnswers = [0,0,0,0,0,0,0,0,0];
+var a=30;
+
+function nextButton(){
+a=30;
+if(page<8){
+page+=1;
+document.getElementById('question').innerHTML = sorular[page];
+
+$(document).ready(function(){
+    $('input:radio').click(function() {
+        $('input:radio').not(this).prop('checked', false);
+    });
+});
+}
+
+}
+
+function previousButton(){
+if(page>0){
+page-=1;
+document.getElementById('question').innerHTML = sorular[page];
+}
+
+$(document).ready(function(){
+    $('input:radio').click(function() {
+        $('input:radio').not(this).prop('checked', false);
+    });
+});
+}
+
+function x(i){
+page = i;
+document.getElementById('question').innerHTML = sorular[i];
+}
+var point=0;
+function showResult(){
+point=0;
+let mTitle = '<tr><th style="width:50%">Questions</th> <th style="width:50%">Your Results</th></tr>'
+let rows = ''
+for(let i=0;i<answerKey.length;i++){
+
+	if(answerKey[i]==userAnswers[i]){
+		point+=10;
+		rows += '<tr><td>example '+(i+1)+'</td><td><i class="fa fa-check"></i></td></tr>'
+	}
+	else{	rows += '<tr><td>example '+(i+1)+'</td><td><i class="fa fa-remove"></i></td></tr>'}
+}
+document.getElementById('comparisonTable').innerHTML = mTitle + rows;
+document.getElementById('point').innerText = "Total Point: " + point;
+}
+
+// Set the date we're counting down to
+function start(){
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+		a--;
+	  // Output the result in an element with id="demo"
+	  document.getElementById("demo").innerHTML = "timer: "+ a;
+		
+	  // If the count down is over, write some text 
+	  if (a < 1) {
+		nextButton();
+		
+		//clearInterval(x);
+		//document.getElementById("demo").innerHTML = "TIME'S UP!";
+	  }
+	  else if(page==8){  
+		clearInterval(x);
+		document.getElementById("demo").innerHTML = "Time's up!";
+	  }
+	}, 1000);
+}
+
+</script>
+
+  </div>
+  
+ <script>
+$(document).ready(function(){
+    $('input:radio').click(function() {
+        $('input:radio').not(this).prop('checked', false);
+    });
+});
+</script>
+
+<script>
+
+</script>
+  
+  <!-- What is Regex -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>What is Regex.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Regular expressions are specially encoded text strings used as patterns for matching sets of strings. They began to emerge in the 1940s as a way to describe regular languages, but they really began to show up in the programming world during the 1970s. The first place I could find them showing up was in the QED text editor written by Ken Thompson.</p>
+    <p><b>“A regular expression is a pattern which specifies a set of strings of characters; it is said to match certain strings.” —Ken Thompson
+    </b>
+	</p>
+	<p>Regular expressions later became an important part of the tool suite that emerged from the Unix operating system—the ed, sed and vi (vim) editors, grep, AWK, among others. But the ways in which regular expressions were implemented were not always so regular.</p>
+
+    
+  </div>
+  
+
+  <!-- Rules -->
+  <div class="w3-container" id="packages" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Rules.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+  </div>
+
+  <div class="containerContent">
+          <p>Each language has different rules for describing Regular Expressions. We are going to analyze it for JS.</p>
+          <div class="containerTable">
+            <table>
+              <thead>
+<tr>
+<th>Character</th>
+<th>What does it do?</th>
+<th>Example</th>
+<th>Matches</th>
+</tr>
+<tr class="tcw">
+<td class="bld ce">^</td>
+<td>Matches beginning of line</td>
+<td>^abc</td>
+<td>abc, abcdef.., abc123</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">$</td>
+<td>Matches <a href="/jargon/e/eol.htm">end of line</a></td>
+<td>abc$</td>
+<td>my:abc, 123abc, theabc</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">.</td>
+<td>Match any <a href="/jargon/c/charact.htm">character</a></td>
+<td>a.c</td>
+<td>abc, asg, a2c</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">|</td>
+<td><a href="/jargon/o/oroperat.htm">OR</a> operator</td>
+<td>abc|xyz</td>
+<td>abc or xyz</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">(...)</td>
+<td><a href="/jargon/c/capture.htm">Capture</a> anything matched</td>
+<td>(a)b(c)</td>
+<td>Captures 'a' and 'c'</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">(?:...)</td>
+<td>Non-capturing group</td>
+<td>(a)b(?:c)</td>
+<td>Captures 'a' but only groups 'c'</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">[...]</td>
+<td>Matches anything contained in <a href="/jargon/b/bracket.htm">brackets</a></td>
+<td>[abc]</td>
+<td>a,b, or c</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">[^...]</td>
+<td>Matches anything not contained in brackets</td>
+<td>[^abc]</td>
+<td>xyz, 123, 1de</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">[a-z]</td>
+<td>Matches any characters between 'a' and 'z'</td>
+<td>[b-z]</td>
+<td>bc, mind, xyz</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">{x}</td>
+<td>The exact 'x' amount of times to match</td>
+<td>(abc){2}</td>
+<td>abcabc</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">{x,}</td>
+<td>Match 'x' amount of times or more</td>
+<td>(abc){2,}</td>
+<td>abcabc, abcabcabc</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">{x,y}</td>
+<td>Match between 'x' and 'y' times.</td>
+<td>(a){2,4}</td>
+<td>aa, aaa, aaaaa</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">*</td>
+<td>Greedy match that matches everything in place of the *</td>
+<td>ab*c</td>
+<td>abc, abbcc, abcdc</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">+</td>
+<td>Matches character before + one or more times</td>
+<td>a+c</td>
+<td>ac, aac, aaac,</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">?</td>
+<td>Matches the character before the ? zero or one times. Also, used as a non-greedy match</td>
+<td>ab?c</td>
+<td>ac, abc</td>
+</tr>
+<tr class="tcw">
+<td class="bld ce">\</td>
+<td>Escape the character after the backslash or create an <a href="/jargon/e/escasequ.htm">escape sequence</a>.</td>
+<td>a\sc</td>
+<td>a c</td>
+</tr>
+</tbody>
+            </table>
+          </div>
+
+        </div>
+  
+  
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Exercise.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  <tr>
+          <td>
+          <label><b>Try a Regular Expression</b></label>
+          
+		  <br><label for="pattern">Pattern:<br/>
+          <input type="text" id="pattern" value="(\w+(\d+)E)" onKeyUp="myFunction()"/></label>
+          
+		  <br><label for="string">Text:<br/>
+          <input type="text" id="string" value="BLM320E Dersi." onKeyUp="myFunction()"/></label>
+		  
+           
+          <div id="output" contentEditable=false class="textBox" style="font-size: 18px;width:450px;">
+          Output: <font color="#F60">BLM320E</font> Dersi.</div>
+           
+		  
+		  
+		  </td>
+        </tr>
+     </div>
+  
+  
+  <!-- refference -->
+ <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Refference.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p> w3schools : <a href="https://www.w3schools.com">www.w3schools.com</a>
+	<p> oreilly : <a href="https://www.oreilly.com/library/view/introducing-regular-expressions/9781449338879/ch01.html">www.oreilly.com</a>
+  </div>
+  
+  
+  
+<!-- End page content -->
+</div>
+
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://hasangulbaba.github.io/AutoMath/" title="W3.CSS" target="_blank" class="w3-hover-opacity">hasan GULBABA</a></p></div>
+
+
+
+<script>
+function myFunction() {
+  	var pattern = document.getElementById("pattern").value;
+	var printt = document.getElementById("string").value;
+	if(pattern != "" && printt != ""){
+		printt = "Output: "+printt.replace(RegExp(pattern,'g'), 
+				("<font color=\"#F60\">$&</font>"));
+		document.getElementById("output").innerHTML = printt;
+	}
+}
+</script>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+
+</body>
+</html>
