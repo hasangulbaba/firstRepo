@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" type="text/css" href="site_theme.css">
 <style>
 body  {
     background-image: url("https://spycep.com/wp-content/uploads/android-telefon-dinleme-spycep-arka-plan-3.jpg");
@@ -8,7 +9,17 @@ body  {
 <body style="background-color:#808080;">
 <title>admin</title>
 <script src="database.js"></script>
+<nav>
 
+    <ul class="nav">
+      <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/deneme.html" style="float:initial;">ANASAYFA</a></li>
+      <li><a href="admin.html">ADMİN</a></li>
+      <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/hizliErisim.html">HIZLI ERİŞİM</a></li>
+      <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/kitaplar.html">Kitapları Görüntüle</a></li>
+      <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/iletisim.html">İletişim</a></li>
+      <li><a href="https://hasangulbaba.github.io/firstRepo/ileriProje/dikkat.html">Dikkat</a></li>
+    </ul>
+  </nav><br>
 <center>
 <h1>ADMİN GİRİŞ SAYFASI<h1/>
 <center>
@@ -17,39 +28,41 @@ body  {
    <form>
   <br>
   <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left; color:white;">Kullanıcı Adı:</text></th>
+   <th><text style="font-weight:bold;text-align:left; ">Kullanıcı Adı:</text></th>
    <th><input type=text id=kullanıcıAd></th> 
   </tr>
   </br>
   Şifrenizi Girin: <input type="password" name="pwd" id="sifre" maxlength="8" color:white;><br>
-  E-mails: <input type="email" name="emailaddress" multiple color:white;>
-</form>
+  E-mails: <input type="email" name="emailaddress" >
+    </form>
  </tr>
   
-<h5 style="border: 3px solid orange; color:white;">YAPMAK İSTEDİĞİNİZ İŞLEMİ SEÇİNİZ</h5>
+<div style="border: 2px solid orange; margin-left: 170px;margin-right: 170px; margin-top: 50px; margin-bottom: 50px;"><h4>YAPMAK İSTEDİĞİNİZ İŞLEMİ SEÇİNİZ</h4></div>
 <button onclick="kitapEkle()">Envantere Kitap Ekle</button>
 <button onclick="kitapcıkar()">Envanterden Kitap çıkar</button>
 
-<table>
 
-  <tr style="text-align:left;">
-   <th><form>
+
+ 
+ <form style="text-align: center;">
   id:<input type="number" id="id" name="quantity" min="1" >
-</form></th>
-  </tr>
+
+
+ 
   <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left; color:white;">Kitap Adı:</text></th>
+   <th><text style="font-weight:bold;text-align:left; ">Kitap Adı:</text></th>
    <th><input type=text id=kitapAd></th> 
   </tr>
    <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left; color:white;">Yazar:</text></th>
+   <th><text style="font-weight:bold;text-align:left; ">Yazar:</text></th>
    <th><input type=text id=yazar></th> 
   </tr>
    <tr style="text-align:left;">
-   <th><text style="font-weight:bold;text-align:left; color:white;">Tür:</text></th>
+   <th><text style="font-weight:bold;text-align:left;">Tür:</text></th>
    <th><input type=text id=tur></th> 
   </tr>
-</table>
+</form>
+
 
 <script>
 const database = new Database();
@@ -82,6 +95,7 @@ function addKitap(txt) {
 }
 readData("kitaplar.txt");
 readData("sifre.txt");
+
 let dizi=[];
 function getSifre(txt) {
     let a = txt.split("\n");
@@ -99,9 +113,6 @@ function kitapEkle(){
 			else{window.alert("Kitabınız Başarılı Bir Şekilde Eklenmiştir !");}
 		}
 		
-	}
-else{
-	window.alert("Girdiğiniz Şifre hatalı!");
 	}
 }
 
